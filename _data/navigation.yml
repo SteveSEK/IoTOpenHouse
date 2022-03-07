@@ -1,7 +1,11 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "IoT 오픈 하우스는?"
+    url: /openhouse/
+  - title: "LoRa"
+    url: /lora/
+  - title: "Cat M1"
+    url: /catm1/
   - title: "About"
     url: https://mmistakes.github.io/minimal-mistakes/about/
   - title: "Sample Posts"
