@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "IoT 오픈 하우스"
 title_separator          : "-"
 subtitle                 : LoRa, Cat M1, 5G, ....
-name                     : "IoT 오픈 하우스xxxxx6"
+name                     : "IoT 오픈 하우스"
 description              : "IoT 통신에 대한  정보와 자료 모음"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
