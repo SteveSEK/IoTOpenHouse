@@ -74,11 +74,15 @@ XXXXX660
     {% endif %}
   </article>
 
+  XXXXX671
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
+  XXXXX672
   {% if page.id and page.related and site.related_posts.size > 0 %}
     <div class="page__related">
+      XXXXX673
       <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
       <div class="grid__wrapper">
+        XXXXX674
         {% for post in site.related_posts limit:4 %}
           {% include archive-single.html type="grid" %}
         {% endfor %}
@@ -86,9 +90,13 @@ XXXXX660
     </div>
   {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
   {% elsif page.id and page.related %}
+  XXXXX675
     <div class="page__related">
+      XXXXX676
       <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h2>
+      XXXXX677
       <div class="grid__wrapper">
+        XXXXX678
         {% for post in site.posts limit:4 %}
           {% if post.id == page.id %}
             {% continue %}
