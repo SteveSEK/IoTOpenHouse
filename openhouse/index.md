@@ -4,9 +4,9 @@ layout: single
 author: SteveKim
 ---
 
-# IoT 오픈 하우스란?
+### IoT 오픈 하우스란?
 
-IoT 오픈 하우스는 디바이스의 개발을 위햇 오픈된 공간입니다.
+IoT 오픈 하우스는 디바이스의 개발을 위햇 오픈된 공간입니다.   
 IoT 오픈 하우스는 IoT 생태계 활성화를 위하여 개발자 및 스타트업의 상품 개발부터 서비스 상용화까지 종합적으로 지원하고 개발자를 육성하는 Eco-Player 역할을 수행합니다.
 
 ![image](https://user-images.githubusercontent.com/2126804/156309322-e62915fb-74c3-4084-9adb-83504f0c987b.png)
@@ -55,8 +55,8 @@ O 통신사 IoT 망 사용료에 대한 협의 방법은?
 *****
 
 ### 위치 및 연락처
-오픈 하우스는 40여평의 규모로 회의실, 교육장, Lab 등을 보유하고 있고, 분당구 수내동에 위치하고 있습니다.  
-[LoRa 전용 계측 장비](https://www.redwoodcomm.com/product/01.php?cate_1=32)와 SK텔레콤 LoRa 망 접속과 데이터 송수신 테스트를 해볼 수 있는 LoRa 게이트웨이도 보유하고 있습니다.  
-오픈 하우스 방문을 원하시거나 오픈 하우스의 컨설팅이나 지원이 필요하시면 [SK텔레콤 IoT 서포트 신청](http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc) 또는 openhouse@wiznet.io로 연락을 주시기 부탁 드립니다.  
+오픈 하우스는 40여평의 규모로 회의실, 교육장, Lab 등을 보유하고 있고, 분당구 수내동에 위치하고 있습니다.    
+[LoRa 전용 계측 장비](https://www.redwoodcomm.com/product/01.php?cate_1=32)와 SK텔레콤 LoRa 망 접속과 데이터 송수신 테스트를 해볼 수 있는 LoRa 게이트웨이도 보유하고 있습니다.     
+오픈 하우스 방문을 원하시거나 오픈 하우스의 컨설팅이나 지원이 필요하시면 [SK텔레콤 IoT 서포트 신청](http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc) 또는 openhouse@wiznet.io로 연락을 주시기 부탁 드립니다.    
 
 
