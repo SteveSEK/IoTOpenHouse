@@ -8,8 +8,10 @@ main:
     url: /catm1/
   - title: "About"
     url: /about/
-  - title: "Sample Posts"
-    url: /year-archive/
+  - title: "XXX1"
+    url: /
+  - title: "XXX2"
+    url: /about/
   - title: "Sample Collections"
     url: /collection-archive/
   - title: "Sitemap"
