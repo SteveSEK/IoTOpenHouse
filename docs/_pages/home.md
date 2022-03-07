@@ -4,12 +4,10 @@ permalink: /
 hidden: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/mm-home-page-feature.jpg
-  actions:
-    - label: "<i class='fas fa-download'></i> Install now"
-      url: "/docs/quick-start-guide/"
+  overlay_image: /assets/images/nasa-Q1p7bh3SHj8-unsplash.jpg
 excerpt: >
-  A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
+          IoT 오픈 하우스는 디바이스의 개발을 위해 오픈된 공간입니다.<br> <br>
+          IoT Open House는 SKT New ICT 생태계 활성화를 위하여 개발자 및 스타트업의 상품 개발부터 서비스 사용화까지 종합적으로 지원하고 개발자를 육성하는 Eco-Player 역할을 수행합니다.<br> <br>  
   <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.24.0">Latest release v4.24.0</a></small>
 feature_row:
   - image_path: /assets/images/mm-customizable-feature.png
