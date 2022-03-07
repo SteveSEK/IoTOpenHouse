@@ -4,6 +4,12 @@ main:
     url: /openhouse/
   - title: "LoRa"
     url: /lora/
+  - title: "LoRa"
+    url: /lora2/
+  - title: "LoRa"
+    url: /lora3/
+  - title: "LoRa"
+    url: /lora4/
   - title: "Cat M1"
     url: /catm1/
   - title: "About"
