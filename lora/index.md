@@ -1,6 +1,6 @@
 ---
-layout: posts
-title: IoT Open House Repository!
+layout: single
+#title: IoT Open House Repository!
 author: SteveKim
 ---
 
@@ -11,7 +11,7 @@ SK텔레콤은 IoT 교두보를 마련하기 위해서 2016년 로라(LoRa) 전�
 
 ### LoRa 모듈
 아래는 SK텔레콤의 인증을 받은 LoRa 모듈들입니다.  
-아래 LoRa 모듈들은 모두 STM32xxx MCU와 Semtech사의 LoRa 칩으로 구성되어 있습니다.
+아래 LoRa 모듈들은 모두 STM32xxx MCU와 Semtech사의 LoRa 칩으로 구성되어 있습니다.   
 ![image](https://user-images.githubusercontent.com/2126804/156309673-639d8b6a-7376-4fa4-87e5-7974601d3d72.png)
 
 > 좌측부터 솔루엠, 성지산업(와이솔), 무라타 사의 LoRa 모듈  
