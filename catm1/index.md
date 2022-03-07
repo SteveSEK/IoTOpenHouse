@@ -1,6 +1,6 @@
 ---
-layout: post2
-title: IoT Open House Repository!
+layout: single
+#title: IoT Open House Repository!
 author: SteveKim
 ---
 
