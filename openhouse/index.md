@@ -1,15 +1,15 @@
 ---
 layout: single
-#title: IoT Open House Repository!
+title: IoT 오픈 하우스 소개
 author: SteveKim
 ---
 
-### IoT 오픈 하우스란? XXX344
+### IoT 오픈 하우스란? 
 
 IoT 오픈 하우스는 디바이스의 개발을 위햇 오픈된 공간입니다.   
 IoT 오픈 하우스는 IoT 생태계 활성화를 위하여 개발자 및 스타트업의 상품 개발부터 서비스 상용화까지 종합적으로 지원하고 개발자를 육성하는 Eco-Player 역할을 수행합니다.
 
-![image](https://user-images.githubusercontent.com/2126804/156309322-e62915fb-74c3-4084-9adb-83504f0c987b.png)   
+![image](https://user-images.githubusercontent.com/2126804/156309322-e62915fb-74c3-4084-9adb-83504f0c987b.png)
 
 **참고** 
 성남시 분당구에 위치한 오픈 하우스 전경입니다.     

@@ -16,7 +16,7 @@ SK텔레콤은 2018년 4월 LTE Cat.M1 전국망 완성을 통해서, IoT 제조
 대부분 UART를 이용한 AT Command로 동작하고, 일부는 Rich OS(Linux, Windows)의 USB를 통한 RNDIS 형태의 연결을 지원하기도 합니다. 또한 일부 모듈들은 GPS 기능, SDK 지원(Linux/ThreadX), eSIM 내장 등을 지원하고 있습니다.  
 ![image](https://user-images.githubusercontent.com/2126804/156312045-4ef46999-fb46-4c0d-99a4-3a4fa493160a.png)
 
-**참고** 
+**참고**    
 좌측 상단부터 우리넷, AM텔레콤, 엔티모아, 텔릿, 앰투앰넷(Quectel), 유블럭스, 탈레스, 무라타, Fibocom, SK텔링크 사의 모듈 입니다.   
 위에 나열된 모듈들 외에도 각 모듈사마다 추가된 Cat M1 모듈들도 있다는 점도 유의하시기 바랍니다.   
 {: .notice--info}
