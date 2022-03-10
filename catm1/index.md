@@ -19,11 +19,11 @@ SK텔레콤은 2018년 4월 LTE Cat.M1 전국망 완성을 통해서, IoT 제조
 **참고**    
 좌측 상단부터 우리넷, AM텔레콤, 엔티모아, 텔릿, 앰투앰넷(Quectel), 유블럭스, 탈레스, 무라타, Fibocom, SK텔링크 사의 모듈 입니다.   
 위에 나열된 모듈들 외에도 각 모듈사마다 추가된 Cat M1 모듈들도 있다는 점도 유의하시기 바랍니다.   
-{: .notice--info}
+{: .notice--primary}
 
 
 ### Cat M1 외장형 모뎀
 ![image](https://user-images.githubusercontent.com/2126804/156312073-28cdd341-4ff2-45a9-a517-ef46c96cf021.png)
 
 ### 연락처
-위에 설명된 Cat M1 모듈 및 외장형 모뎀들에 대해서 **특장점에 대해서 궁금**하시거나 **실물을 확인**해 보고 싶다거나 **제조사 및 판매처의 연락처**를 원하시는 분들은 openhouse@wiznet.io로 연락을 주시기 부탁 드립니다.    
+위에 설명된 Cat M1 모듈 및 외장형 모뎀들에 대해서 **특장점에 대해서 궁금**하시거나 **실물을 확인**해 보고 싶다거나 **제조사 및 판매처의 연락처**를 원하시는 분들은 [openhouse@wiznet.io](mailto:openhouse@wiznet.io)로 연락을 주시기 부탁 드립니다.    

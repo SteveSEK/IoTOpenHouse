@@ -15,7 +15,7 @@ IoT 오픈 하우스는 IoT 생태계 활성화를 위하여 개발자 및 스�
 
 **참고** 
 성남시 분당구에 위치한 오픈 하우스 전경입니다.     
-{: .notice--info}
+{: .notice--primary}
 
 
 *****
@@ -34,10 +34,8 @@ IoT 오픈 하우스는 IoT 생태계 활성화를 위하여 개발자 및 스�
 - **교육** : IoT 단말 및 클라우드 상설 교육 과정   
 
 **참고:**  *오픈 하우스에서 지원해 드리는 컨설팅이나 개발 지원, 상용화 지원등의 서비스들은 IoT 기업들에게 모두 **무상**으로 진행이 됩니다.*     
-{: .notice--primary}
+{: .notice--info}
 
-
-※  
 
 *****
 ### IoT 디바이스 개발 프로세스와 오픈 하우스의 단계별 지원 
@@ -68,6 +66,6 @@ IoT 디바이스를 개발할 때에는 대략 아래와 같은 프로세스로 
 ### 위치 및 연락처
 오픈 하우스는 40여평의 규모로 회의실, 교육장, Lab 등을 보유하고 있고, 분당구 수내동에 위치하고 있습니다.    
 [LoRa 전용 계측 장비](https://www.redwoodcomm.com/product/01.php?cate_1=32)와 SK텔레콤 LoRa 망 접속과 데이터 송수신 테스트를 해볼 수 있는 LoRa 게이트웨이도 보유하고 있습니다.     
-오픈 하우스 방문을 원하시거나 오픈 하우스의 컨설팅이나 지원이 필요하시면 [SK텔레콤 IoT 서포트 신청](http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc) 또는 openhouse@wiznet.io로 연락을 주시기 부탁 드립니다.    
+오픈 하우스 방문을 원하시거나 오픈 하우스의 컨설팅이나 지원이 필요하시면 [SK텔레콤 IoT 서포트 신청](http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc) 또는 [openhouse@wiznet.io](mailto:openhouse@wiznet.io)로 연락을 주시기 부탁 드립니다.    
 
 

@@ -2,7 +2,8 @@
 layout: single
 title: LoRa 소개 
 author: SteveKim
-toc: true
+classes: wide
+toc: false
 ---
 
 
@@ -18,7 +19,7 @@ SK텔레콤은 IoT 교두보를 마련하기 위해서 2016년 로라(LoRa) 전�
 
 **참고** 
 좌측부터 솔루엠, 성지산업(와이솔), 무라타 사의 LoRa 모듈 입니다.   
-{: .notice--info}
+{: .notice--primary}
 
 
 ### LoRa 외장형 모뎀  

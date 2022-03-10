@@ -6,9 +6,7 @@ main:
     url: /lora/
   - title: "Cat M1"
     url: /catm1/
-  - title: "About"
-    url: /about/
-  - title: "Sample Collections"
-    url: /collection-archive/
-  - title: "Sitemap"
-    url: /sitemap/
+  - title: "포스팅"
+    url: /posting/
+- title: "개발 링크"
+    url: /link/
