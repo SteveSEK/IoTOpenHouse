@@ -61,12 +61,9 @@ atom_feed:
   hide                   : # true, false (default)
 
 # sekim XXXX add search
-# search                   : # true, false (default)
-# search_full_content      : # true, false (default)
-# search_provider          : # lunr (default), algolia, google
-search                   : true
-search_full_content      : true
-search_provider          : lunr
+search                   : # true, false (default)
+search_full_content      : # true, false (default)
+search_provider          : # lunr (default), algolia, google
 
 algolia:
   application_id         : # YOUR_APPLICATION_ID
