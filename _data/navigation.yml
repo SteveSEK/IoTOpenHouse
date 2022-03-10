@@ -8,5 +8,7 @@ main:
     url: /catm1/
   - title: "포스팅"
     url: /posting/
-- title: "개발 링크"
+  - title: "개발 링크"
     url: /link/
+  - title: "활용 사례"
+    url: /usecase/
