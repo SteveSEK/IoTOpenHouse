@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "오픈 하우스는?"
+  - title: "오픈 하우스 개요"
     url: /openhouse/
   - title: "LoRa"
     url: /lora/
@@ -10,5 +10,4 @@ main:
     url: /posting/
   - title: "링크"
     url: /link/
-  - title: "활용 사례"
-    url: /usecase/
+  
