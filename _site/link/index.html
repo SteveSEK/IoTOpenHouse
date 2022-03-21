@@ -25,7 +25,23 @@
 
 
 
+  <meta property="og:image" content="http://localhost:4000/assets/images/bio-photo.jpg">
 
+
+
+  <meta name="twitter:site" content="@mmistakes">
+  <meta name="twitter:title" content="IoT 오픈 하우스">
+  <meta name="twitter:description" content="IoT 통신에 대한 정보와 자료 모음">
+  <meta name="twitter:url" content="http://localhost:4000/link/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://localhost:4000/assets/images/bio-photo.jpg">
+    
+  
+
+  
 
 
 
@@ -49,7 +65,8 @@
     
       "@type": "Person",
       "name": "IoT 오픈 하우스",
-      "url": "http://localhost:4000/"
+      "url": "http://localhost:4000/",
+      "sameAs": ["https://twitter.com/","https://github.com/"]
     
   }
 </script>
@@ -109,6 +126,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/assets/images/iotlogo.png" alt="IoT 오픈 하우스"></a>
+        
         <a class="site-title" href="/">
           IoT 오픈 하우스
           <span class="site-subtitle">LoRa, Cat M1, 5G</span>
@@ -116,12 +135,19 @@
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/openhouse/">오픈 하우스 개요</a>
             </li><li class="masthead__menu-item">
-              <a href="/catm1/">IoT 무선 통신</a>
+              <a href="/catm1/">Cat M1</a>
+            </li><li class="masthead__menu-item">
+              <a href="/lora/">LoRa</a>
             </li><li class="masthead__menu-item">
               <a href="/post-archive/">포스팅</a>
             </li><li class="masthead__menu-item">
               <a href="/link/">링크</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -141,6 +167,89 @@
 
 <div id="main" role="main">
   
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
@@ -188,16 +297,16 @@
 
 <h3 id="lte-iot-chipset">LTE IoT Chipset</h3>
 <ul>
-  <li><a href="https://www.qualcomm.com/products/qualcomm-9206-lte-modem"><strong>MDM9206</strong></a>  Qualcomm LTE IoT Chipset</li>
-  <li><a href="https://www.qualcomm.com/products/qualcomm-9205-lte-modem"><strong>MDM9205</strong></a>  Qualcomm LTE IoT Chipset</li>
-  <li><a href="https://www.altair-semi.com/products/alt1250/"><strong>ALT1250</strong></a>  Altair(Sony) LTE IoT Chipset</li>
-  <li><a href="https://www.nordicsemi.com/Products/nRF9160"><strong>nRF9160</strong></a>  Nordic LTE IoT Chipset</li>
+  <li><a href="https://www.qualcomm.com/products/qualcomm-9206-lte-modem"><strong>MDM9206</strong></a>  Qualcomm - designed as a global multi-mode connectivity solution</li>
+  <li><a href="https://www.qualcomm.com/products/qualcomm-9205-lte-modem"><strong>MDM9205</strong></a>  Qualcomm - next-generation global multi-mode single chipset connectivity solution</li>
+  <li><a href="https://www.altair-semi.com/products/alt1250/"><strong>ALT1250</strong></a>  Altair(Sony) - Low Power, ultra Small, Most Secured and Highly Integrated cellular IoT Chipset</li>
+  <li><a href="https://www.u-blox.com/en/product/ubx-r5-series/"><strong>UBX-R5</strong></a>  u-blox - IoT security redefined in a 5G-ready LTE-M and NB-IoT chipset</li>
+  <li><a href="https://www.nordicsemi.com/Products/nRF9160"><strong>nRF9160</strong></a>  Nordic - Low power SiP with integrated LTE-M/NB-IoT modem and GNSS</li>
 </ul>
 
 
         
       </section>
-
 
       <footer class="page__meta">
         
@@ -212,7 +321,7 @@
 
       
 
-    
+      
     </div>
 
     
@@ -224,6 +333,17 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -233,21 +353,19 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
-    
 
     
       
         
-      
+          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
         
       
         
-      
+          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
         
-      
+          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
         
       
     
@@ -268,6 +386,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
