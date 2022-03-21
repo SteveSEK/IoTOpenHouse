@@ -1,0 +1,36 @@
+I"
+<h3 id="sk-텔레콤">SK 텔레콤</h3>
+<ul>
+  <li><a href="http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc"><strong>IoT 서포트 신청</strong></a>  IoT 오픈 하우스 컨설팅 및 기술 지원 신청 (무상)</li>
+  <li><a href="http://b2b.tworld.co.kr/cs/counsel/iotModule.bc"><strong>무상 모듈 신청</strong></a>  LoRa, Cat M1 샘플 모듈 신청 (무상)</li>
+  <li><a href="http://b2b.tworld.co.kr/cs/basicproduct/basicProductPlanList.bc?mclCd=13"><strong>IoT 요금제</strong></a>  데이터 중심 LTE IoT 요금제 소개</li>
+</ul>
+
+<h3 id="오픈-하우스">오픈 하우스</h3>
+<ul>
+  <li><a href="https://github.com/Wiznet/wiznet-iot-shield-kr"><strong>Cat M1 스타터키트</strong></a>  Cat M1 스타터키트 개발 자료 (<a href="https://github.com/Wiznet/wiznet-iot-shield-arduino-kr">아두이노</a>, <a href="https://github.com/Wiznet/wiznet-iot-shield-mbed-kr">mbed/STM32</a>, <a href="https://github.com/Wiznet/wiznet-iot-shield-raspberrypi-kr">라즈베리파이</a>)</li>
+  <li><a href="https://forms.office.com/r/gK4Aa57fyA"><strong>무상 모듈 배송</strong></a>  LoRa, Cat M1 샘플 모듈 배송 (무상)</li>
+  <li><a href="https://github.com/Wiznet/woorinet-wd-n400s-kr"><strong>Cat M1 외장형 모뎀 예제</strong></a>  Cat M1 외장형 모뎀 가이드</li>
+</ul>
+
+<h3 id="기타">기타</h3>
+<ul>
+  <li><a href="https://iot.nipa.kr/guide/iot/m2m.iot#"><strong>NIPA 망적합성</strong></a>  NIPA 국내외 통신사 IoT 기술 규격에 따른 망적합성 무선성능측정 및 장비 지원</li>
+</ul>
+
+<h3 id="iot-적용-사례">IoT 적용 사례</h3>
+<ul>
+  <li><a href="https://rems.energy.or.kr/"><strong>REMS</strong></a>  신재생에너지(태양광) 통합 모니터링 시스템</li>
+  <li><a href="https://www.kes.go.kr/"><strong>전기안전공사</strong></a>  IoT 전기안정 단말장치</li>
+</ul>
+
+<h3 id="lte-iot-chipset">LTE IoT Chipset</h3>
+<ul>
+  <li><a href="https://www.qualcomm.com/products/qualcomm-9206-lte-modem"><strong>MDM9206</strong></a>  Qualcomm - designed as a global multi-mode connectivity solution</li>
+  <li><a href="https://www.qualcomm.com/products/qualcomm-9205-lte-modem"><strong>MDM9205</strong></a>  Qualcomm - next-generation global multi-mode single chipset connectivity solution</li>
+  <li><a href="https://www.altair-semi.com/products/alt1250/"><strong>ALT1250</strong></a>  Altair(Sony) - Low Power, ultra Small, Most Secured and Highly Integrated cellular IoT Chipset</li>
+  <li><a href="https://www.u-blox.com/en/product/ubx-r5-series/"><strong>UBX-R5</strong></a>  u-blox - IoT security redefined in a 5G-ready LTE-M and NB-IoT chipset</li>
+  <li><a href="https://www.nordicsemi.com/Products/nRF9160"><strong>nRF9160</strong></a>  Nordic - Low power SiP with integrated LTE-M/NB-IoT modem and GNSS</li>
+</ul>
+
+:ET

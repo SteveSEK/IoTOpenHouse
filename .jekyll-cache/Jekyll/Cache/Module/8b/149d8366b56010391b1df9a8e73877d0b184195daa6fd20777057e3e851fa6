@@ -1,0 +1,40 @@
+I"{
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/iotlogo.png" alt="IoT 오픈 하우스"></a>
+        
+        <a class="site-title" href="/">
+          IoT 오픈 하우스
+          <span class="site-subtitle">LoRa, Cat M1, 5G</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/openhouse/">오픈 하우스 개요</a>
+            </li><li class="masthead__menu-item">
+              <a href="/catm1/">Cat M1</a>
+            </li><li class="masthead__menu-item">
+              <a href="/lora/">LoRa</a>
+            </li><li class="masthead__menu-item">
+              <a href="/post-archive/">포스팅</a>
+            </li><li class="masthead__menu-item">
+              <a href="/link/">링크</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+:ET
