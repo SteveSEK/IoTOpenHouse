@@ -29,10 +29,11 @@ last_modified_at: 2022-03-10T16:00:02-04:00
 
 
 ### LTE IoT Chipset
- - [**MDM9206**](https://www.qualcomm.com/products/qualcomm-9206-lte-modem)  Qualcomm LTE IoT Chipset
- - [**MDM9205**](https://www.qualcomm.com/products/qualcomm-9205-lte-modem)  Qualcomm LTE IoT Chipset
- - [**ALT1250**](https://www.altair-semi.com/products/alt1250/)  Altair(Sony) LTE IoT Chipset 
- - [**nRF9160**](https://www.nordicsemi.com/Products/nRF9160)  Nordic LTE IoT Chipset
+ - [**MDM9206**](https://www.qualcomm.com/products/qualcomm-9206-lte-modem)  Qualcomm - designed as a global multi-mode connectivity solution
+ - [**MDM9205**](https://www.qualcomm.com/products/qualcomm-9205-lte-modem)  Qualcomm - next-generation global multi-mode single chipset connectivity solution 
+ - [**ALT1250**](https://www.altair-semi.com/products/alt1250/)  Altair(Sony) - Low Power, ultra Small, Most Secured and Highly Integrated cellular IoT Chipset
+ - [**UBX-R5**](https://www.u-blox.com/en/product/ubx-r5-series/)  u-blox - IoT security redefined in a 5G-ready LTE-M and NB-IoT chipset
+ - [**nRF9160**](https://www.nordicsemi.com/Products/nRF9160)  Nordic - Low power SiP with integrated LTE-M/NB-IoT modem and GNSS
 
 
 

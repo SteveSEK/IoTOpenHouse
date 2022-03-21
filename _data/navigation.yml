@@ -1,14 +1,12 @@
 # main links
+# sekim XXXX 20220311 navigation 
 main:
   - title: "오픈 하우스 개요"
     url: /openhouse/
-  - title: "IoT 무선 통신"
+  - title: "Cat M1"
     url: /catm1/
-    children:
-      - title: "Cat M1"
-        url: /catm1/
-      - title: "LoRa"
-        url: /lora/
+  - title: "LoRa"
+    url: /lora/
   - title: "포스팅"
     url: /post-archive/
   - title: "링크"
