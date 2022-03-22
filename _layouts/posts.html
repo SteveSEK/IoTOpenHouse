@@ -20,7 +20,7 @@ layout: archive
 {% assign postsByYear = site.posts | where_exp: "item", "item.hidden != true" | group_by_exp: 'post', 'post.date | date: "%Y"' %}
 {% for year in postsByYear %}
   <section id="{{ year.name }}" class="taxonomy__section">
-    <!-- sekim xxxxx -->
+    <!-- sekim 20220311 remove year-value in posting -->
     <!-- <h2 class="archive__subtitle">{{ year.name }}</h2> -->
     <div class="entries-{{ entries_layout }}">
       {% for post in year.items %}
