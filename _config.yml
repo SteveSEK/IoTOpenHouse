@@ -112,10 +112,10 @@ analytics:
 # Site Author
 # sekim XXXXX Site Author
 author:
- name             : "IoT 오픈 하우스"
+ name             : "SteveKim"
  avatar           : "/assets/images/bio-photo.jpg"
- bio              : "I am an **amazing** person."
- location         : "Korea"
+ bio              : "IoT 오픈 하우스"
+ location         : "성남시 분당구"
  email            : stevekim@wiznet.io
  links:
    - label: "Email"
@@ -123,19 +123,19 @@ author:
      url: "mailto:stevekim@wiznet.io"
    - label: "Website"
      icon: "fas fa-fw fa-link"
-     # url: "https://your-website.com"
+     url: "https://your-website.com"
    - label: "Twitter"
      icon: "fab fa-fw fa-twitter-square"
-     # url: "https://twitter.com/"
+     url: "https://twitter.com/"
    - label: "Facebook"
      icon: "fab fa-fw fa-facebook-square"
-     # url: "https://facebook.com/"
+     url: "https://facebook.com/"
    - label: "GitHub"
      icon: "fab fa-fw fa-github"
-     # url: "https://github.com/"
+     url: "https://github.com/"
    - label: "Instagram"
      icon: "fab fa-fw fa-instagram"
-     # url: "https://instagram.com/"
+     url: "https://instagram.com/"
 
 # Site Footer
 footer:
