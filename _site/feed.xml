@@ -1,2 +1,196 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-22T11:37:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>IoT 오픈 하우스</name><email>stevekim@wiznet.io</email></author><entry><title type="html">Categories and Tags</title><link href="http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags/" rel="alternate" type="text/html" title="Categories and Tags" /><published>2021-03-01T00:00:00+09:00</published><updated>2021-03-01T00:00:00+09:00</updated><id>http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags</id><content type="html" xml:base="http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags/"><![CDATA[<p>카테고리와 태그 모음
-…………………………………………………………………………………………………………</p>]]></content><author><name>IoT 오픈 하우스</name><email>stevekim@wiznet.io</email></author><category term="lora" /><category term="cat m1" /><category term="5g" /><category term="misc" /><category term="모듈" /><category term="인증" /><category term="GPS" /><category term="외장형 모뎀" /><category term="Qualcomm" /><summary type="html"><![CDATA[카테고리와 태그 모음 …………………………………………………………………………………………………………]]></summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T10:10:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">PDP Conext 초기화</title><link href="http://localhost:4000/cat%20m1/pdp-context/" rel="alternate" type="text/html" title="PDP Conext 초기화" /><published>2021-05-01T00:00:00+09:00</published><updated>2021-05-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/pdp-context</id><content type="html" xml:base="http://localhost:4000/cat%20m1/pdp-context/"><![CDATA[<h3 id="pdp-context">PDP Context</h3>
+<p>PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. 
+IP가 GPRS에서 지원하는 PDP의 한 예이다. 
+단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다.
+즉, 외부 Packet Data Network로의 연결을 위한 여러가지 종류 정보의 집합 이라고 할수 있다.</p>
+
+<p>보통 PDP를 Activation 하기 전에, 설정된 PDP 정보를 확인하거나 통신 사업자가 제공하는 정보를 입력해야 한다.</p>
+
+<h3 id="sk-텔레콤-cat-m1-pdp-정보">SK 텔레콤 Cat M1 PDP 정보</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AT</span><span class="o">+</span><span class="no">CGDCONT</span><span class="p">?</span>
+<span class="o">+</span><span class="no">CGDCONT</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">"IPV4V6"</span><span class="p">,</span><span class="s2">""</span><span class="p">,</span><span class="s2">"0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="o">+</span><span class="no">CGDCONT</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="s2">"IPV4V6"</span><span class="p">,</span><span class="s2">"lte-internet.sktelecom.com"</span><span class="p">,</span><span class="s2">"0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<h3 id="pdp-context-초기화-sk-텔레콤-cat-m1">PDP Context 초기화 (SK 텔레콤 Cat M1)</h3>
+
+<p>유심이나 모듈이 개통 이력이 있는 경우나 초기 개통에서 문제가 발생하는 경우에, 아래 처럼 PDP Context 초기화하고 재부팅을 하면 정상 개통이 이루어질 수 있다.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AT</span><span class="o">+</span><span class="no">CGDCONT</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="err">”</span><span class="no">IPV4V6</span><span class="err">”</span>
+<span class="no">Ok</span>
+
+<span class="no">AT</span><span class="o">+</span><span class="no">CFUN</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+<span class="no">OK</span>
+</code></pre></div></div>
+
+<h3 id="null-apn">Null APN</h3>
+
+<p>일부 글로벌심의 경우에 설정해야 하는 APN이 정확하지 않다면, APN을 Null로 설정하고 재부팅을 하면 정상 동작하는 경우도 있다. (Hologram SIM &amp; BG96)</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AT</span><span class="o">+</span><span class="no">CGDCONT</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="err">”</span><span class="no">IP</span><span class="err">”</span><span class="p">,</span>
+<span class="no">Ok</span>
+
+<span class="no">AT</span><span class="o">+</span><span class="no">CFUN</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+<span class="no">OK</span>
+</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="pdp context" /><category term="개통 초기화" /><category term="글로벌심" /><summary type="html"><![CDATA[PDP Context PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. IP가 GPRS에서 지원하는 PDP의 한 예이다. 단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다. 즉, 외부 Packet Data Network로의 연결을 위한 여러가지 종류 정보의 집합 이라고 할수 있다.]]></summary></entry><entry><title type="html">BG96 개통 로그</title><link href="http://localhost:4000/cat%20m1/bg96-open-sim-log/" rel="alternate" type="text/html" title="BG96 개통 로그" /><published>2021-04-12T00:00:00+09:00</published><updated>2021-04-12T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/bg96-open-sim-log</id><content type="html" xml:base="http://localhost:4000/cat%20m1/bg96-open-sim-log/"><![CDATA[<h3 id="bg96-개통-로그">BG96 개통 로그</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">RDY</span>
+
+<span class="o">+</span><span class="no">CFUN</span><span class="p">:</span> <span class="mi">1</span>
+
+<span class="no">APP</span> <span class="no">RDY</span>
+
+<span class="o">+</span><span class="no">CPIN</span><span class="p">:</span> <span class="no">READY</span>
+
+<span class="o">+</span><span class="no">QUSIM</span><span class="p">:</span> <span class="mi">1</span>
+
+<span class="o">+</span><span class="no">QIND</span><span class="p">:</span> <span class="no">SMS</span> <span class="no">DONE</span>
+
+<span class="o">+</span><span class="no">CPIN</span><span class="p">:</span> <span class="no">READY</span>
+
+<span class="o">+</span><span class="no">QUSIM</span><span class="p">:</span> <span class="mi">1</span>
+
+<span class="o">+</span><span class="no">QIND</span><span class="p">:</span> <span class="no">SMS</span> <span class="no">DONE</span>
+<span class="no">AT</span><span class="o">+</span><span class="no">QCDS</span>
+<span class="o">+</span><span class="no">QCDS</span><span class="p">:</span> <span class="s2">"SRV"</span><span class="p">,</span><span class="s2">"CAT-M"</span><span class="p">,</span><span class="mi">45012</span><span class="p">,</span><span class="mi">2500</span><span class="p">,</span><span class="mi">13</span><span class="no">B</span><span class="o">***</span><span class="p">,</span><span class="no">R13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">368</span><span class="p">,</span><span class="mi">2058</span><span class="p">,</span><span class="o">-</span><span class="mi">74</span><span class="p">,</span><span class="o">-</span><span class="mi">99</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">+</span><span class="no">CNUM</span>
+<span class="o">+</span><span class="no">CNUM</span><span class="p">:</span> <span class="p">,</span><span class="s2">"0122750****"</span><span class="p">,</span><span class="mi">129</span>
+
+<span class="no">OK</span>
+</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="BG96" /><category term="개통 로그" /><summary type="html"><![CDATA[BG96 개통 로그]]></summary></entry><entry><title type="html">RNDIS</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-rndis/" rel="alternate" type="text/html" title="RNDIS" /><published>2021-04-09T00:00:00+09:00</published><updated>2021-04-09T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-rndis</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-rndis/"><![CDATA[<h3 id="rndis">RNDIS</h3>
+
+<blockquote>
+  <p>The Remote Network Driver Interface Specification (RNDIS) is a Microsoft proprietary protocol used mostly on top of USB.[1] It provides a virtual Ethernet link to most versions of the Windows, Linux, and FreeBSD operating systems. Multiple revisions of a partial RNDIS specification are available from Microsoft, but Windows implementations have been observed to issue requests not included in that specification, and to have undocumented constraints.[2] <br />
+The protocol is tightly coupled to Microsoft’s programming interfaces and models, most notably the Network Driver Interface Specification (NDIS), which are alien to operating systems other than Windows. This complicates implementing RNDIS on non-Microsoft operating systems,[citation needed] but Linux,[3] FreeBSD,[4] NetBSD[5] and OpenBSD[6] implement RNDIS natively. <br />
+<cite><a href="https://en.wikipedia.org/wiki/RNDIS">RNDIS Wikipedia</a></cite></p>
+</blockquote>
+
+<h3 id="windows-rndis-diagram">Windows RNDIS Diagram</h3>
+<blockquote>
+  <p><img src="http://localhost:4000/assets/images/remote-ndis-architecture.png" alt="image-center" class="align-center" />
+<cite><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/network/overview-of-remote-ndis--rndis-">Microsoft Overview of Remote NDIS (RNDIS)</a></cite></p>
+</blockquote>
+
+<h3 id="우리넷-cat-m1-모듈-rndis-설정-방법">우리넷 Cat M1 모듈 RNDIS 설정 방법</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AT</span><span class="err">$$</span><span class="n">SWVER</span>
+<span class="err">$$</span><span class="n">SWVER</span><span class="o">:</span> <span class="n">S130XX</span><span class="p">.</span><span class="mo">037</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">24</span> <span class="mi">2018</span> <span class="mi">18</span><span class="o">:</span><span class="mi">37</span><span class="o">:</span><span class="mi">48</span>
+
+<span class="n">OK</span>
+<span class="n">AT</span><span class="o">*</span><span class="n">RNDISMODE</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">OK</span>
+</code></pre></div></div>
+
+<h3 id="windows에-rndis-추가된-모습">Windows에 RNDIS 추가된 모습</h3>
+<p><img src="http://localhost:4000/assets/images/windows-rndis-test-1.jpg" alt="image-center" /></p>
+
+<h3 id="windows-rndis-통신-테스트">Windows RNDIS 통신 테스트</h3>
+<p><img src="http://localhost:4000/assets/images/windows-rndis-test-2.jpg" alt="image-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="라즈베리파이" /><category term="우리넷" /><category term="RNDIS" /><category term="USB" /><summary type="html"><![CDATA[RNDIS]]></summary></entry><entry><title type="html">우리넷 모뎀 FW 업그레이드</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-fw-upgrade/" rel="alternate" type="text/html" title="우리넷 모뎀 FW 업그레이드" /><published>2021-04-03T00:00:00+09:00</published><updated>2021-04-03T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-fw-upgrade</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-fw-upgrade/"><![CDATA[<h3 id="펌웨어-버전-확인-방법">펌웨어 버전 확인 방법</h3>
+<p>AT Command 사용포트로 (UART1) 연결하여 다음과 같은 명령어를 실행하면 됩니다.
+<strong>AT$$SWVER</strong></p>
+
+<h3 id="펌웨어-다운로드">펌웨어 다운로드</h3>
+<ul>
+  <li>S430.XX.020.01_TD3S.zip: <a href="https://www.dropbox.com/s/ge63n741i3gvjkc/S430XX.020.01_TD3S.zip?dl=0," title="020 Download">Download</a></li>
+  <li>S430.XX.023.01_TD3S.zip: <a href="https://www.dropbox.com/s/30q0nd04jqup95x/S430XX.023.01_TD3S.zip?dl=0," title="023 Downloda">Download</a></li>
+</ul>
+
+<h3 id="환경설정">환경설정</h3>
+<ul>
+  <li>Windows 10 (64-bit)</li>
+  <li>Qualcomm Driver:  <a href="https://www.dropbox.com/s/37x1xx9wdbmr0r8/qud.win.1.1_installer_10052.9.zip?dl=0," title="Qualcomm Driver">Download</a></li>
+</ul>
+
+<h3 id="펌웨어-업데이트">펌웨어 업데이트</h3>
+<ol>
+  <li>Qualcomm Driver 설치 후, DP/DM 연결(UART연결이 아닌 USB RNDIS 연결, Interface B/D 사용시 Modem_USB Port 연결)</li>
+  <li>펌웨어 프로그램 다운로드 및 압축해제</li>
+  <li>WD-N400S 연결된 상태에서 exe 파일 (S430.XX.XXX.01_TD3S.exe) 실행</li>
+  <li>펌웨어 업데이트 후, 버전 확인</li>
+</ol>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><summary type="html"><![CDATA[펌웨어 버전 확인 방법 AT Command 사용포트로 (UART1) 연결하여 다음과 같은 명령어를 실행하면 됩니다. AT$$SWVER]]></summary></entry><entry><title type="html">Cat.M1 GPS 사용 예제</title><link href="http://localhost:4000/cat%20m1/Cat-M1-GPS-example/" rel="alternate" type="text/html" title="Cat.M1 GPS 사용 예제" /><published>2021-04-01T00:00:00+09:00</published><updated>2021-04-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/Cat-M1-GPS-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/Cat-M1-GPS-example/"><![CDATA[<p>LTE Cat M1용의 칩셋과 모듈들은 대부분 GPS/GLONASS 기능을 지원하고 있다.</p>
+
+<h3 id="qualcomm-mdm9206">Qualcomm MDM9206</h3>
+<blockquote>
+  <p>Location : Satellite Systems Support: Beidou, Galileo, GLONASS, GPS <br />
+<cite><a href="https://www.qualcomm.com/products/qualcomm-9206-lte-modem">MDM9206</a></cite></p>
+</blockquote>
+
+<h3 id="altair-alt1250">Altair ALT1250</h3>
+<blockquote>
+  <p>Assisted GPS and GLONASS navigation systems are supported<br />
+<cite><a href="https://www.altair-semi.com/products/alt1250/">ALT1250</a></cite></p>
+</blockquote>
+
+<h3 id="우리넷-모뎀-gps-example">우리넷 모뎀 GPS Example</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Serial 통신 확인</span>
+<span class="n">AT</span>
+<span class="n">OK</span>
+
+<span class="c1">// S/W Version 확인 (2019년 12월 1일 이후 버전인지 확인)</span>
+<span class="n">AT</span><span class="err">$$</span><span class="n">SWVER</span>
+<span class="err">$$</span><span class="n">SWVER</span><span class="o">:</span> <span class="n">S430XX</span><span class="p">.</span><span class="mo">020</span><span class="p">.</span><span class="mo">01</span><span class="p">,</span> <span class="n">Mar</span> <span class="mi">24</span> <span class="mi">2021</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mo">01</span>
+
+<span class="n">OK</span>
+
+<span class="c1">// GPS 기능 출력 인터페이스 설정</span>
+<span class="n">AT</span><span class="err">$$</span><span class="n">GPSCONF</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="err">$$</span><span class="n">GPSCONF</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+
+<span class="n">OK</span>
+
+<span class="c1">// GPS 기능 활성화</span>
+<span class="n">AT</span><span class="err">$$</span><span class="n">GPS</span>
+<span class="n">OK</span>
+<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span>
+<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span>
+<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">49</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">44</span><span class="p">,</span><span class="mi">194</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">193</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">12</span><span class="o">-</span><span class="mi">42</span>
+<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">49</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">44</span><span class="p">,</span><span class="mi">194</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">193</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">12</span><span class="o">-</span><span class="mi">42</span>
+<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">49</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">44</span><span class="p">,</span><span class="mi">194</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">193</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">12</span><span class="o">-</span><span class="mi">42</span>
+<span class="p">..............................</span>
+<span class="p">..............................</span>
+
+<span class="c1">//GPS 기능 비활성화</span>
+<span class="n">AT</span><span class="err">$$</span><span class="n">GPSSTOP</span>
+<span class="n">OK</span>
+</code></pre></div></div>
+
+<h3 id="유블럭스-gnss">유블럭스 GNSS</h3>
+
+<p>이에 반해, 유블럭스 같은 모듈은 Qualcomm MDM920x를 사용하고 있지만, 별도의 GNSS 모듈을 사용하도록 가이드하고 있다.
+<img src="http://localhost:4000/assets/images/ublox-sara-gnss.jpg" alt="image-center" class="align-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="GPS" /><category term="우리넷" /><category term="유블럭스" /><summary type="html"><![CDATA[LTE Cat M1용의 칩셋과 모듈들은 대부분 GPS/GLONASS 기능을 지원하고 있다.]]></summary></entry><entry><title type="html">Cat.M1 사진 전송</title><link href="http://localhost:4000/cat%20m1/Cat-M1-send-photo/" rel="alternate" type="text/html" title="Cat.M1 사진 전송" /><published>2021-04-01T00:00:00+09:00</published><updated>2021-04-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/Cat-M1-send-photo</id><content type="html" xml:base="http://localhost:4000/cat%20m1/Cat-M1-send-photo/"><![CDATA[<p>LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 보다 최대 전송 속도가 비교적 높기 때문에 실시간 트래킹 서비스 또는 사진 전송와 같은 중용량 및 실시간 응용에 사용하기 적합하다.<br />
+아래 예제에서는 <a href="http://www.woori-net.com">우리넷</a> 의 Cat.M1 외장형 모뎀을 이용하여 사진 전송이 가능한지 확인하고 속도를 검증해보도록 하겠다.</p>
+
+<p>​</p>
+<h3 id="하드웨어-설정---wd-n400s-외장형-모뎀-설정">하드웨어 설정 - ​WD-N400S 외장형 모뎀 설정</h3>
+
+<p>우리넷의 Cat.M1 외장형 모뎀을 사용하기 위한 방법은 두 가지 방법이 있다.</p>
+<ul>
+  <li>UART 인터페이스를 통해 AT 커맨드로 외장형 모뎀을 제어하는 방법</li>
+  <li>RNDIS(Remote NDIS) 모드로 사용하는 방법</li>
+</ul>
+
+<p>단, AT 커맨드를 이용하는 경우 UART 인터페이스(Baud Rate: 115200)를 사용하므로 Cat.M1 최대 전송 속도인 375kbps를 사용할 수 없으며, RNDIS 모드를 사용하면 Cat.M1 최대 전송 속도를 사용할 수 있다. 외장형 모뎀을 RNDIS 모드로 사용하기 위해서는 AT 커맨드로 ‘RNDISMODE=1’을 설정 후 재시작해야 한다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AT</span><span class="err">$$</span><span class="n">SWVER</span>
+<span class="err">$$</span><span class="n">SWVER</span><span class="o">:</span> <span class="n">S130XX</span><span class="p">.</span><span class="mo">037</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">24</span> <span class="mi">2018</span> <span class="mi">18</span><span class="o">:</span><span class="mi">37</span><span class="o">:</span><span class="mi">48</span>
+
+<span class="n">OK</span>
+<span class="n">AT</span><span class="o">*</span><span class="n">RNDISMODE</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">OK</span>
+</code></pre></div></div>
+
+<h3 id="하드웨어-설정---라즈베리파이와-카메라">하드웨어 설정 - 라즈베리파이와 카메라</h3>
+<p>Cat M1 외장형 모뎀 설정이 끝나면, 아래와 같이 라즈베리파이, 카메라, Cat M1 외장형 모뎀 등을 연결한다.
+<img src="http://localhost:4000/assets/images/rpi-cat-m1-modem.png" alt="image-center" class="align-center" /></p>
+
+<h3 id="동작-동영상">동작 동영상</h3>
+
+<p>사진을 찍고 전송하는 동작 영상은 <a href="https://www.youtube.com/watch?v=xJbm8BLaym0">Youtube 동영상</a>을 참고하면 된다.</p>
+
+<h3 id="lte-catm1-속도">LTE Cat.M1 속도</h3>
+
+<p>총 50번 테스트를 진행하였으며, 평균 데이터 전송률은 <strong>298.37bps</strong> 이었습니다. 통신사에서 공표한 Cat.M1 최고 전송 속도의 80~90% 수준에 육박하는 것을 확인할 수 있었다.</p>
+
+<p>​</p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="라즈베리파이" /><category term="우리넷" /><category term="사진" /><category term="RNDIS" /><category term="USB" /><summary type="html"><![CDATA[LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 보다 최대 전송 속도가 비교적 높기 때문에 실시간 트래킹 서비스 또는 사진 전송와 같은 중용량 및 실시간 응용에 사용하기 적합하다. 아래 예제에서는 우리넷 의 Cat.M1 외장형 모뎀을 이용하여 사진 전송이 가능한지 확인하고 속도를 검증해보도록 하겠다.]]></summary></entry><entry><title type="html">Categories and Tags</title><link href="http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags/" rel="alternate" type="text/html" title="Categories and Tags" /><published>2021-03-01T00:00:00+09:00</published><updated>2021-03-01T00:00:00+09:00</updated><id>http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags</id><content type="html" xml:base="http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags/"><![CDATA[<p>카테고리와 태그 모음
+…………………………………………………………………………………………………………</p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="lora" /><category term="cat m1" /><category term="5g" /><category term="misc" /><category term="모듈" /><category term="인증" /><category term="GPS" /><category term="외장형 모뎀" /><category term="Qualcomm" /><summary type="html"><![CDATA[카테고리와 태그 모음 …………………………………………………………………………………………………………]]></summary></entry></feed>

@@ -118,40 +118,25 @@ author:
  location         : "성남시 분당구"
  email            : stevekim@wiznet.io
  links:
-   - label: "Email"
-     icon: "SteveKim"
-     url: "mailto:stevekim@wiznet.io"
+   - label: "WIZnet"
+     icon: "fas fa-fw fa-w"
+     url: "https://wiznet.io"
+   - label: "T World Biz"
+     icon: "fas fa-fw fa-t"
+     url: "http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc"
    - label: "Website"
      icon: "fas fa-fw fa-link"
      url: "https://your-website.com"
-   - label: "Twitter"
-     icon: "fab fa-fw fa-twitter-square"
-     url: "https://twitter.com/"
-   - label: "Facebook"
-     icon: "fab fa-fw fa-facebook-square"
-     url: "https://facebook.com/"
-   - label: "GitHub"
-     icon: "fab fa-fw fa-github"
-     url: "https://github.com/"
-   - label: "Instagram"
-     icon: "fab fa-fw fa-instagram"
-     url: "https://instagram.com/"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+   - label: "WIZnet"
+     icon: "fas fa-fw fa-w"
+     url: "https://wiznet.io"
+   - label: "T World Biz"
+     icon: "fas fa-fw fa-t"
+     url: "http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc"
 
 
 # Reading Files
