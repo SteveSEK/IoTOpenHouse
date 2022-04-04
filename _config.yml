@@ -119,23 +119,20 @@ author:
  email            : stevekim@wiznet.io
  links:
    - label: "WIZnet"
-     icon: "fas fa-fw fa-w"
+     icon: "fas fa-solid fa-link"
      url: "https://wiznet.io"
    - label: "T World Biz"
-     icon: "fas fa-fw fa-t"
-     url: "http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc"
-   - label: "Website"
      icon: "fas fa-fw fa-link"
-     url: "https://your-website.com"
+     url: "http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc"
 
 # Site Footer
 footer:
   links:
    - label: "WIZnet"
-     icon: "fas fa-fw fa-w"
+     icon: "fas fa-fw fa-link"
      url: "https://wiznet.io"
    - label: "T World Biz"
-     icon: "fas fa-fw fa-t"
+     icon: "fas fa-fw fa-link"
      url: "http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc"
 
 

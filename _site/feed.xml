@@ -1,4 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T10:10:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">PDP Conext 초기화</title><link href="http://localhost:4000/cat%20m1/pdp-context/" rel="alternate" type="text/html" title="PDP Conext 초기화" /><published>2021-05-01T00:00:00+09:00</published><updated>2021-05-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/pdp-context</id><content type="html" xml:base="http://localhost:4000/cat%20m1/pdp-context/"><![CDATA[<h3 id="pdp-context">PDP Context</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-04T10:06:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">Cat M1 HTTP 예제</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example/" rel="alternate" type="text/html" title="Cat M1 HTTP 예제" /><published>2021-06-22T00:00:00+09:00</published><updated>2021-06-22T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example/"><![CDATA[<h3 id="cat-m1-http-예제">Cat M1 HTTP 예제</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AT</span><span class="o">*</span><span class="no">WHTTP</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="no">GET</span><span class="p">,</span><span class="n">reqbin</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">echo</span>
+<span class="o">*</span><span class="no">WHTTP</span><span class="ss">:HTTPS</span><span class="p">,</span><span class="no">GET</span><span class="p">,</span><span class="n">reqbin</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">echo</span><span class="p">,</span><span class="mi">0</span><span class="p">,,,,,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span>
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WHTTP</span><span class="o">=</span><span class="mi">3</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WHTTPR</span><span class="ss">:START</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;&lt;</span><span class="n">head</span><span class="o">&gt;&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="no">ReqBin</span> <span class="no">Echo</span><span class="o">&lt;</span><span class="sr">/title&gt;&lt;meta name="description" content="ReqBin Echo Interface"&gt;&lt;meta charset="utf-8"&gt;&lt;meta name="viewport" content="width=device-width"&gt;&lt;link rel="shortcut icon" href="/s</span><span class="n">tatic</span><span class="o">/</span><span class="n">favicon</span><span class="p">.</span><span class="nf">ico</span><span class="s2">"&gt;&lt;style&gt;body {font-size: 1.5rem;} l
+i {margin: 0.3rem;} &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;h1&gt;ReqBin Echo&lt;/h1&gt; &lt;p&gt;Simple echo interface for HTTP methods.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;https://reqbin.com/echo/get/json&lt;/li&gt; &lt;li&gt;https://reqbin.com/echo/post/json&lt;/li&gt; &lt;li&gt;https://reqbin.com/echo/head/json&lt;/li&gt; &lt;li&gt;https://
+reqbin.com/echo/get/xml&lt;/li&gt; &lt;li&gt;https://reqbin.com/echo/post/xml&lt;/li&gt; &lt;li&gt;https://reqbin.com/echo/post/form&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;
+*WHTTPR:COMPLETED
+
+
+
+AT*WHTTP=1,POST,reqbin.com/echo/post/json
+*WHTTP:HTTPS,POST,reqbin.com/echo/post/json,0,,,,,0,0,0,10
+
+OK
+AT*WHTTP=3
+OK
+*WHTTPR:START
+{"</span><span class="n">success</span><span class="s2">":"</span><span class="kp">true</span><span class="s2">"}
+*WHTTPR:COMPLETED
+
+
+
+AT*WHTTP=1,POST,www.google.com
+*WHTTP:HTTPS,POST,www.google.com,0,,,,,0,0,0,10
+
+OK
+AT*WHTTP=3
+OK
+*WHTTPR:START
+&lt;!DOCTYPE html&gt;
+&lt;html lang=en&gt;
+  &lt;meta charset=utf-8&gt;
+  &lt;meta name=viewport content="</span><span class="n">initial</span><span class="o">-</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minimum</span><span class="o">-</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">device</span><span class="o">-</span><span class="n">width</span><span class="s2">"&gt;
+  &lt;title&gt;Error 411 (Length Required)!!1&lt;/title&gt;
+  &lt;style&gt;
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* &gt; body{background:url(//www.google.com/images/errors/robot.png) 10
+0% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.g
+oogle.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0
+% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_
+color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  &lt;/style&gt;
+  &lt;a href=//www.google.com/&gt;&lt;span id=logo aria-label=Google&gt;&lt;/span&gt;&lt;/a&gt;
+  &lt;p&gt;&lt;b&gt;411.&lt;/b&gt; &lt;ins&gt;That’s an error.&lt;/ins&gt;
+  &lt;p&gt;POST requests require a &lt;code&gt;Content-length&lt;/code&gt; header.  &lt;ins&gt;That’s all we know.&lt;/ins&gt;
+*WHTTPR:COMPLETED
+</span></code></pre></div></div>
+
+<p><img src="http://localhost:4000/assets/images/woorinet-http-example.jpg" alt="image-center" class="align-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><category term="외장형 모뎀" /><category term="http" /><summary type="html"><![CDATA[Cat M1 HTTP 예제]]></summary></entry><entry><title type="html">Cat M1 Azure IoT 예제</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-azure-example/" rel="alternate" type="text/html" title="Cat M1 Azure IoT 예제" /><published>2021-06-22T00:00:00+09:00</published><updated>2021-06-22T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-azure-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-azure-example/"><![CDATA[<h3 id="cat-m1-azure-iot-예제">Cat M1 Azure IoT 예제</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AT</span><span class="o">*</span><span class="no">WFPUSH</span><span class="o">=</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span><span class="p">,</span><span class="no">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURkekNDQWwrZ0F3SUJBZ0lFQWdBQXVUQU5CZ2txaGtpRzl3MEJBUVVGQURCYU1Rc3dDUVlEVlFRR0V3SkoKUlRFU01CQUdBMVVFQ2hNSlFtRnNkR2x0YjNKbE1STXdFUVlEVlFRTEV3cERlV0psY2xSeWRYTjBNU0l3SUFZRApWUVFERXhsQ1lXeDBhVzF2Y21VZ1EzbGlaWEpVY25WemRDQlNiMjkwTUI0WERUQXdNRFV4TWpFNE5EWXdNRm9YCkRUSTFNRFV4TW</span><span class="o">..................................................................................</span><span class="no">DdFBoU056a0UxYWt4ZWhpL29DcjAKRXBuM28wV0M0enhlOVoyZXRjaWVmQzdJcEo1T0NCUkxiZjF3YldzYVk3MWs1aCszenZEeW55NjdHN2Z5VUloegprc0xpNHhhTm1qSUNxNDRZM2VrUUVlNStOYXVRcno0d2xIclFNejJuWlEvMS9JNmVZczlIUkN3Qlhic2R0VExTClI5STRMdEQrZ2R3eWFoNjE3anpWL09lQkhSbkRKRUxxWXptcAotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t</span>
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WFPUSH</span><span class="o">=</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span><span class="p">,</span><span class="no">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURoekNDQW0rZ0F3SUJBZ0lQQW9oMUpPeUNvTjJsOFRhc3lnUDZNQTBHQ1NxR1NJYjNEUUVCQ3dVQU1DVXgKSXpBaEJnTlZCQU1NR2xkSldtNWxkQ0JRYVdOdklGTjFZbTl5WkdsdVlYUmxJRU5CTUI0WERUSXlNRE15TkRJegpOVFl3TVZvWERUSXpNRE15TkRJek5UWXdNVm93WkRFTE1Ba0dBMVVFQmhNQ1FWVXhFekFSQmdOVkJBZ01DbE52CmJXVXRVM1JoZE</span><span class="o">.................................................................................</span><span class="p">.</span>
+<span class="nf">sU1phTGs2NnpRQ3JZTEI5RS83Q1cKQm9yMzNiRFphRGl0K1h2RmhBai9CN2Vua09BRDlRNU1RYnZwMmMxVHZ3YkhWTkI0MXFBbE5xL3NqMFg2UWxtNQpIdlE5b2d1dDJJdjVLZzRuNFRVSEZpMUU3NXBVSVNSdHNPSFNkdlRtb0VuSFhyY3Z5ck1MZVpzMWgyRllHWG1qCjIvL1ZiOTlIY0JnZ29UdE9IdUcrWnBUYXd1WlFsZVNHYzlxWjZnSlNZeXRhaENzbzBjQ2syejRpa1E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t</span>
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WFPUSH</span><span class="o">=</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">key</span><span class="p">,</span><span class="no">LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRFdrWGtzT2pycDZBRHUKb1BBaU5oalFRb1JIVVJmbU1QVXFLekRsWXlBcC96OVlVVjdpYVlydXZXdVB0dVl5V0owb0JFWTg4SjJSaWMrWApML0Z1WFF2eHlwNFBaK1ZNL1l3elZOWjM1clNGaVczeTFOWTFGRTFFZXd0amdSdkJVYkRqZlJ4TGgxdkUyenc3CldXeFpXZXVYY0</span><span class="o">..................................................................................</span><span class="mi">4</span><span class="no">MUJFdEdGY0dKWQpIMFYweE5zVmRoSTF1UngyQU5YMGhCeDRyRUZabjFqMjA1QlRXT0dQbUxpekd1RmVySGl1dGlOMWVOQzh0TXpnCmp6YjBTTUpWT3dWL1B2ZUU0WU5JWnlpK3lXRjVHbUJiL1hSSmMrZlFVY0labEVEeElWWFNYRzNQZHpsODhUZkQKQ2tkeWdTQk1jNEROZzduQmY3ZFIwMWhBCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0</span><span class="o">=</span>
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">cacerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:cacerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">clientcerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientcerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">clientkey</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">key</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientkey</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">key</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span><span class="n">ssl</span><span class="ss">:/</span><span class="o">/</span><span class="no">WIZnetHub</span><span class="p">.</span><span class="nf">azure</span><span class="o">-</span><span class="n">devices</span><span class="p">.</span><span class="nf">net</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:endpoint</span><span class="p">,</span><span class="n">ssl</span><span class="ss">:/</span><span class="o">/</span><span class="no">WIZnetHub</span><span class="p">.</span><span class="nf">azure</span><span class="o">-</span><span class="n">devices</span><span class="p">.</span><span class="nf">net</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">clientname</span><span class="p">,</span><span class="n">wiznet_catm1_demo_01</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientname</span><span class="p">,</span><span class="n">wiznet_catm1_demo_01</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">username</span><span class="p">,</span><span class="no">WIZnetHub</span><span class="p">.</span><span class="nf">azure</span><span class="o">-</span><span class="n">devices</span><span class="p">.</span><span class="nf">net</span><span class="o">/</span><span class="n">wiznet_catm1_demo_01</span><span class="o">/</span><span class="p">?</span><span class="n">api</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mi">2018</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">30</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="p">:</span><span class="n">username</span><span class="p">,</span><span class="no">WIZnetHub</span><span class="p">.</span><span class="nf">azure</span><span class="o">-</span><span class="n">devices</span><span class="p">.</span><span class="nf">net</span><span class="o">/</span><span class="n">wiznet_catm1_demo_01</span><span class="o">/</span><span class="p">?</span><span class="n">api</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mi">2018</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">30</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="p">:</span><span class="n">password</span><span class="p">,</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">port</span><span class="p">,</span><span class="mi">8883</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:port</span><span class="p">,</span><span class="mi">8883</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">selfsigned</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:selfsigned</span><span class="p">,</span><span class="mi">1</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">servercertauth</span><span class="p">,</span><span class="mi">0</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:servercertauth</span><span class="p">,</span><span class="mi">0</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="p">?</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:endpoint</span><span class="p">,</span><span class="n">ssl</span><span class="p">:</span><span class="sr">//</span><span class="no">WIZnetHub</span><span class="p">.</span><span class="nf">azure</span><span class="o">-</span><span class="n">devices</span><span class="p">.</span><span class="nf">net</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientname</span><span class="p">,</span><span class="n">wiznet_catm1_demo_01</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:port</span><span class="p">,</span><span class="mi">8883</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:keepalive</span><span class="p">,</span><span class="mi">300</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:cleansession</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:username</span><span class="p">,</span><span class="no">WIZnetHub</span><span class="p">.</span><span class="nf">azure</span><span class="o">-</span><span class="n">devices</span><span class="p">.</span><span class="nf">net</span><span class="o">/</span><span class="n">wiznet_catm1_demo_01</span><span class="o">/</span><span class="p">?</span><span class="n">api</span><span class="o">-</span><span class="n">version</span><span class="o">=</span><span class="mi">2018</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">30</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="p">:</span><span class="n">password</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:cacerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientcerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientkey</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">azure</span><span class="p">.</span><span class="nf">key</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientkeypasswd</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:selfsigned</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:servercertauth</span><span class="p">,</span><span class="mi">0</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCON</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTCON</span><span class="p">:</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCON</span><span class="p">:</span><span class="mi">2</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTPUB</span><span class="o">=</span><span class="n">devices</span><span class="o">/</span><span class="n">wiznet_catm1_demo_01</span><span class="o">/</span><span class="n">messages</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="p">,</span><span class="s2">"{ "</span><span class="no">Temp</span><span class="s2">" : 23 }"</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTPUB</span><span class="p">:</span><span class="mi">1</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTPUB</span><span class="o">=</span><span class="n">devices</span><span class="o">/</span><span class="n">wiznet_catm1_demo_01</span><span class="o">/</span><span class="n">messages</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="p">,</span><span class="s2">"{ "</span><span class="no">Temp</span><span class="s2">" : 21 }"</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTPUB</span><span class="p">:</span><span class="mi">2</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTPUB</span><span class="o">=</span><span class="n">devices</span><span class="o">/</span><span class="n">wiznet_catm1_demo_01</span><span class="o">/</span><span class="n">messages</span><span class="o">/</span><span class="n">events</span><span class="o">/</span><span class="p">,</span><span class="s2">"{ "</span><span class="no">Temp</span><span class="s2">" : 26 }"</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTPUB</span><span class="p">:</span><span class="mi">3</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTDIS</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTDIS</span><span class="p">:</span><span class="mi">0</span>
+
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/assets/images/woorinet-azure-example-1.jpg" alt="image-center" class="align-center" />
+<img src="http://localhost:4000/assets/images/woorinet-azure-example-2.jpg" alt="image-center" class="align-center" />
+<img src="http://localhost:4000/assets/images/woorinet-azure-example-3.jpg" alt="image-center" class="align-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><category term="외장형 모뎀" /><category term="Azure" /><summary type="html"><![CDATA[Cat M1 Azure IoT 예제]]></summary></entry><entry><title type="html">Cat M1 AWS IoT 예제</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-aws-example/" rel="alternate" type="text/html" title="Cat M1 AWS IoT 예제" /><published>2021-06-22T00:00:00+09:00</published><updated>2021-06-22T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-aws-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-aws-example/"><![CDATA[<h3 id="cat-m1-aws-iot-예제">Cat M1 AWS IoT 예제</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AT</span><span class="o">*</span><span class="no">WFPUSH</span><span class="o">=</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span><span class="p">,</span><span class="no">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURRVENDQWltZ0F3SUJBZ0lUQm15Zno1bS9qQW81NHZCNGlrUG1salpieWpBTkJna3Foa2lHOXcwQkFRc0YKQURBNU1Rc3dDUVlEVlFRR0V3SlZVekV</span><span class="o">....................................................................................</span><span class="mi">0</span><span class="n">tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0</span><span class="o">=</span>
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WFPUSH</span><span class="o">=</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span><span class="p">,</span><span class="no">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURXVENDQWtHZ0F3SUJBZ0lVYlFpVzdQRmFzWXZWbFFLeG9yMGNLVCttWVBJd0RRWUpLb1pJaHZjTkFRRUwKQlFBd1RURkxNRWtHQTFVRUN3eENRVzF</span><span class="o">...................................................................................</span><span class="n">pRW82RGJEU2VBSW9KYVp4UEtCVU9jRDcrUXlyaGgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ</span><span class="o">==</span>
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WFPUSH</span><span class="o">=</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">key</span><span class="p">,</span><span class="no">LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcFFJQkFBS0NBUUVBc0h1b1lHYVA3SXMvR0J2Q3B5Y2dyWEp6Y08zditONmUyYzhzZG9xbFFxL2NnRWNoCjI3eFJWRXYzT1Q2cS84cVlXZnB</span><span class="o">....................................................................................</span><span class="no">RqT0NDUEdVLzhFblMrS244ZG1RPQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQ</span><span class="o">==</span>
+<span class="no">OK</span>
+
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">cacerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:cacerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">clientcerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientcerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">clientkey</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">key</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientkey</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">key</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span><span class="n">ssl</span><span class="ss">:/</span><span class="o">/</span><span class="n">a3uz5t2azg1xdz</span><span class="o">-</span><span class="n">ats</span><span class="p">.</span><span class="nf">iot</span><span class="p">.</span><span class="nf">ap</span><span class="o">-</span><span class="n">northeast</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="nf">amazonaws</span><span class="p">.</span><span class="nf">com</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:endpoint</span><span class="p">,</span><span class="n">ssl</span><span class="ss">:/</span><span class="o">/</span><span class="n">a3uz5t2azg1xdz</span><span class="o">-</span><span class="n">ats</span><span class="p">.</span><span class="nf">iot</span><span class="p">.</span><span class="nf">ap</span><span class="o">-</span><span class="n">northeast</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="nf">amazonaws</span><span class="p">.</span><span class="nf">com</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">clientname</span><span class="p">,</span><span class="n">clientid</span><span class="o">-</span><span class="n">testid</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientname</span><span class="p">,</span><span class="n">clientid</span><span class="o">-</span><span class="n">testid</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">username</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:username</span><span class="p">,</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:password</span><span class="p">,</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">port</span><span class="p">,</span><span class="mi">8883</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:port</span><span class="p">,</span><span class="mi">8883</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">selfsigned</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:selfsigned</span><span class="p">,</span><span class="mi">1</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="o">=</span><span class="n">servercertauth</span><span class="p">,</span><span class="mi">0</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:servercertauth</span><span class="p">,</span><span class="mi">0</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCFG</span><span class="p">?</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:endpoint</span><span class="p">,</span><span class="n">ssl</span><span class="p">:</span><span class="sr">//</span><span class="n">a3uz5t2azg1xdz</span><span class="o">-</span><span class="n">ats</span><span class="p">.</span><span class="nf">iot</span><span class="p">.</span><span class="nf">ap</span><span class="o">-</span><span class="n">northeast</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="nf">amazonaws</span><span class="p">.</span><span class="nf">com</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientname</span><span class="p">,</span><span class="n">clientid</span><span class="o">-</span><span class="n">testid</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:port</span><span class="p">,</span><span class="mi">8883</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:keepalive</span><span class="p">,</span><span class="mi">300</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:cleansession</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:username</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:password</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:cacerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">cacerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientcerts</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientcerts</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">crt</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientkey</span><span class="p">,</span><span class="sr">/data/</span><span class="n">clientkey</span><span class="o">-</span><span class="n">aws</span><span class="p">.</span><span class="nf">key</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:clientkeypasswd</span><span class="p">,</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:selfsigned</span><span class="p">,</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCFG</span><span class="ss">:servercertauth</span><span class="p">,</span><span class="mi">0</span>
+
+
+<span class="no">OK</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTCON</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTCON</span><span class="p">:</span><span class="mi">1</span>
+<span class="o">*</span><span class="no">WMQTCON</span><span class="p">:</span><span class="mi">2</span>
+
+
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTPUB</span><span class="o">=</span><span class="n">testtopic</span><span class="o">/</span><span class="n">tx</span><span class="p">,</span><span class="s2">"{ "</span><span class="no">Temp</span><span class="s2">" : 23 }"</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTPUB</span><span class="p">:</span><span class="mi">1</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTPUB</span><span class="o">=</span><span class="n">testtopic</span><span class="o">/</span><span class="n">tx</span><span class="p">,</span><span class="s2">"{ "</span><span class="no">Temp</span><span class="s2">" : 21 }"</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTPUB</span><span class="p">:</span><span class="mi">2</span>
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTPUB</span><span class="o">=</span><span class="n">testtopic</span><span class="o">/</span><span class="n">tx</span><span class="p">,</span><span class="s2">"{ "</span><span class="no">Temp</span><span class="s2">" : 26 }"</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTPUB</span><span class="p">:</span><span class="mi">3</span>
+
+
+<span class="no">AT</span><span class="o">*</span><span class="no">WMQTDIS</span>
+<span class="no">OK</span>
+<span class="o">*</span><span class="no">WMQTDIS</span><span class="p">:</span><span class="mi">0</span>
+
+
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/assets/images/woorinet-aws-example-1.jpg" alt="image-center" class="align-center" />
+<img src="http://localhost:4000/assets/images/woorinet-aws-example-2.jpg" alt="image-center" class="align-center" />
+<img src="http://localhost:4000/assets/images/woorinet-aws-example-3.jpg" alt="image-center" class="align-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><category term="외장형 모뎀" /><category term="AWS" /><summary type="html"><![CDATA[Cat M1 AWS IoT 예제]]></summary></entry><entry><title type="html">PDP Conext 초기화</title><link href="http://localhost:4000/cat%20m1/pdp-context/" rel="alternate" type="text/html" title="PDP Conext 초기화" /><published>2021-05-01T00:00:00+09:00</published><updated>2021-05-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/pdp-context</id><content type="html" xml:base="http://localhost:4000/cat%20m1/pdp-context/"><![CDATA[<h3 id="pdp-context">PDP Context</h3>
 <p>PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. 
 IP가 GPRS에서 지원하는 PDP의 한 예이다. 
 단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다.
@@ -31,7 +283,58 @@ IP가 GPRS에서 지원하는 PDP의 한 예이다.
 
 <span class="no">AT</span><span class="o">+</span><span class="no">CFUN</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
 <span class="no">OK</span>
-</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="pdp context" /><category term="개통 초기화" /><category term="글로벌심" /><summary type="html"><![CDATA[PDP Context PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. IP가 GPRS에서 지원하는 PDP의 한 예이다. 단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다. 즉, 외부 Packet Data Network로의 연결을 위한 여러가지 종류 정보의 집합 이라고 할수 있다.]]></summary></entry><entry><title type="html">BG96 개통 로그</title><link href="http://localhost:4000/cat%20m1/bg96-open-sim-log/" rel="alternate" type="text/html" title="BG96 개통 로그" /><published>2021-04-12T00:00:00+09:00</published><updated>2021-04-12T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/bg96-open-sim-log</id><content type="html" xml:base="http://localhost:4000/cat%20m1/bg96-open-sim-log/"><![CDATA[<h3 id="bg96-개통-로그">BG96 개통 로그</h3>
+</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="pdp context" /><category term="개통 초기화" /><category term="글로벌심" /><summary type="html"><![CDATA[PDP Context PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. IP가 GPRS에서 지원하는 PDP의 한 예이다. 단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다. 즉, 외부 Packet Data Network로의 연결을 위한 여러가지 종류 정보의 집합 이라고 할수 있다.]]></summary></entry><entry><title type="html">IoT 디바이스 인증서 업데이트</title><link href="http://localhost:4000/cat%20m1/iot-device-certificate-update/" rel="alternate" type="text/html" title="IoT 디바이스 인증서 업데이트" /><published>2021-04-13T00:00:00+09:00</published><updated>2021-04-13T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/iot-device-certificate-update</id><content type="html" xml:base="http://localhost:4000/cat%20m1/iot-device-certificate-update/"><![CDATA[<h3 id="iot-디바이스의-인증서-만료-문제">IoT 디바이스의 인증서 만료 문제</h3>
+
+<h5 id="root-ca-인증서-만료-문제">Root CA 인증서 만료 문제</h5>
+<blockquote>
+  <p>Expiring root certificates will cause devices like smart TVs and refrigerators to fail in the next few years, security researcher Scott Helme has warned. <br />
+Secure internet connections depend on the server presenting a valid certificate to the client, the most common problem being that the server certificate is out of date, easily fixed by the server admin.
+In order to validate the certificate, though, the client must have a trusted root certificate from the issuing authority, and this, says Helme, is a problem for devices that never get updated.  <br />
+<cite><a href="https://www.theregister.com/2020/06/10/iot_trouble_root_certificates_expire/">An Internet of Trouble lies ahead as root certificates begin to expire en masse, warns security researcher</a></cite></p>
+
+</blockquote>
+
+<h5 id="디바이스-인증서-로테이션">디바이스 인증서 로테이션</h5>
+<p>위에 언급된 Root CA 인증서 만료 문제 외에도, IoT 디바이스의 인증서를 업데이트해야 하는 상항도 발생할 수 있다.</p>
+
+<h3 id="aws-iot-deice-defender--인증서-만료-감지">AWS IoT Deice Defender : 인증서 만료 감지</h3>
+<p>AWS IoT Core의 AWS IoT Device Defender에서는 계정 및 디바이스와 관련된 설정 및 정책에서 보안 조치가 구현되어 있는지 확인하고 있다. 이 기능 중에는 CA 및 디바이스의 인증서에 대한 해지 여부, 인증서 만료 여부, 활성화 상태, 손상 상태 등을 검사하고, 감지하는 기능을 제공하고 있다. 아래는 인증서 만료에 대한 기능에 대한 설명이다.</p>
+
+<blockquote>
+  <p>A CA certificate is expiring within 30 days or has expired. <br />
+This check appears as CA_CERTIFICATE_EXPIRING_CHECK in the CLI and API. <br />
+<cite><a href="https://docs.aws.amazon.com/iot/latest/developerguide/audit-chk-ca-cert-approaching-expiration.html ">CA certificate expiring</a></cite></p>
+</blockquote>
+
+<blockquote>
+  <p>A device certificate is expiring within 30 days or has expired. <br />
+This check appears as DEVICE_CERTIFICATE_EXPIRING_CHECK in the CLI and API. <br />
+<cite><a href="https://docs.aws.amazon.com/iot/latest/developerguide/audit-chk-device-cert-approaching-expiration.html ">Device certificate expiring</a></cite></p>
+</blockquote>
+
+<h3 id="azure-sphere-security-service--인증서-관리를-포함한-토탈-iot-보안-솔루션-제공">Azure Sphere Security Service : 인증서 관리를 포함한 토탈 IoT 보안 솔루션 제공</h3>
+<p>마이크로소프트는 인증서 유효성 검사는 물론이고, <a href="https://docs.microsoft.com/en-us/azure-sphere/product-overview/what-is-azure-sphere">Azure Sphere</a>라고 하는 IoT 토탈 보안 솔루션도 제공하고 있다. 이를 통해서, 인증서 업데이트를 포함한 모든 보안 서비스들을 제공받을 수 있다.</p>
+<blockquote>
+  <p>Every Azure Sphere device relies on the Trusted Root store, which is part of the Azure Sphere OS. The Trusted Root store contains a list of root certificates that are used to validate the identity of the Azure Sphere Security Service when the device connects for device authentication and attestation (DAA), over-the-air (OTA) update, or error reporting. These certificates are provided with the OS. <br />
+When daily attestation succeeds, the device receives two certificates: an update certificate and a customer certificate. The update certificate enables the device to connect to the Azure Sphere Update Service to get software updates and to upload error reports; it is not accessible to applications or through the command line. The customer certificate, sometimes called the DAA certificate, can be used by applications to connect to third-party services such wolfSSL that use transport layer security (TLS). This certificate is valid for 24 hours. Applications can retrieve it programmatically by calling the DeviceAuth_GetCertificatePath function. <br />
+Devices that connect to Azure-based services such as Azure IoT Hub, Azure IoT Central, and Azure IoT Edge must present their Azure Sphere tenant CA certificate to authenticate their Azure Sphere tenant. The azsphere ca-certificate download command in the CLI returns the tenant CA certificate for such uses.  <br />
+<cite><a href="https://docs.microsoft.com/en-us/azure-sphere/deployment/certificate-use-with-azure-sphere ">Certificate use with Azure Sphere</a></cite></p>
+</blockquote>
+
+<h3 id="해결책">해결책</h3>
+<p>IoT 디바이스의 인증서 만료 문제대 대한 가장 간단한 방법은 인증서 만료 기간을 수십년 이상으로 설정하는 방법이 있고, 클라우드와의 C2D 메시지 등을 이용해서, 인증서 페이로드 데이터를 디바이스에게 전송하는 방법도 있다.</p>
+
+<blockquote>
+  <p>“…There is no hard-rule to set the maximum expiration of your self-signed X509 certificate deployed to Azure IoT Hub. Nevertheless even if the certificate is long-lived, you need to account that it can expire and there needs to be a way to update the certificate on the device…”  <br />
+“…I have created a test root CA cert with a validity of 100 years and uploaded it to IoTHub…”  <br />
+<cite><a href="https://docs.microsoft.com/en-us/answers/questions/438891/maximum-root-ca-expiration.html ">Maximum ROOT_CA Expiration</a></cite></p>
+</blockquote>
+
+<p>당연한 결론이겠지만, IoT 디바이스의 인증서 관리에 대한 가장 좋은 방법은 디바이스의 주기적인 업데이트를 지원하는 일인 것 같다.</p>
+<blockquote>
+  <p>The best solution to this issue is ‘Updates’. There must be updated one way or the other. Being a software/device builder who works around public key infrastructure for secure communication, you need to consider the fact that not updating your Root CA will have a huge impact on your service. Even if you are working with legacy clients, your choice of CA will have a vast influence on them.  <br />
+<cite><a href="https://www.ssl2buy.com/wiki/expired-root-certificates-main-reason-to-weaken-iot-devices ">Expired Root Certificates: The Main Reason to Weaken IoT Devices</a></cite></p>
+</blockquote>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="인증서 만료" /><category term="root ca" /><category term="azure" /><category term="aws" /><summary type="html"><![CDATA[IoT 디바이스의 인증서 만료 문제]]></summary></entry><entry><title type="html">BG96 개통 로그</title><link href="http://localhost:4000/cat%20m1/bg96-open-sim-log/" rel="alternate" type="text/html" title="BG96 개통 로그" /><published>2021-04-12T00:00:00+09:00</published><updated>2021-04-12T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/bg96-open-sim-log</id><content type="html" xml:base="http://localhost:4000/cat%20m1/bg96-open-sim-log/"><![CDATA[<h3 id="bg96-개통-로그">BG96 개통 로그</h3>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">RDY</span>
 
@@ -78,7 +381,17 @@ The protocol is tightly coupled to Microsoft’s programming interfaces and mode
 <span class="err">$$</span><span class="n">SWVER</span><span class="o">:</span> <span class="n">S130XX</span><span class="p">.</span><span class="mo">037</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">24</span> <span class="mi">2018</span> <span class="mi">18</span><span class="o">:</span><span class="mi">37</span><span class="o">:</span><span class="mi">48</span>
 
 <span class="n">OK</span>
+
+<span class="c1">// WM-N400MSE RNDIS 모드 설정</span>
 <span class="n">AT</span><span class="o">*</span><span class="n">RNDISMODE</span><span class="o">=</span><span class="mi">1</span>
+<span class="o">*</span><span class="n">RNDISMODE</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">OK</span>
+
+<span class="c1">// RNDIS 모드 적용을 위해 모듈 재부팅</span>
+<span class="n">AT</span><span class="o">*</span><span class="n">SKT</span><span class="o">*</span><span class="n">RESET</span>
+<span class="o">*</span><span class="n">SKT</span><span class="o">*</span><span class="n">RESET</span><span class="o">:</span><span class="mi">1</span>
+
 <span class="n">OK</span>
 </code></pre></div></div>
 
@@ -192,5 +505,4 @@ The protocol is tightly coupled to Microsoft’s programming interfaces and mode
 
 <p>총 50번 테스트를 진행하였으며, 평균 데이터 전송률은 <strong>298.37bps</strong> 이었습니다. 통신사에서 공표한 Cat.M1 최고 전송 속도의 80~90% 수준에 육박하는 것을 확인할 수 있었다.</p>
 
-<p>​</p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="라즈베리파이" /><category term="우리넷" /><category term="사진" /><category term="RNDIS" /><category term="USB" /><summary type="html"><![CDATA[LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 보다 최대 전송 속도가 비교적 높기 때문에 실시간 트래킹 서비스 또는 사진 전송와 같은 중용량 및 실시간 응용에 사용하기 적합하다. 아래 예제에서는 우리넷 의 Cat.M1 외장형 모뎀을 이용하여 사진 전송이 가능한지 확인하고 속도를 검증해보도록 하겠다.]]></summary></entry><entry><title type="html">Categories and Tags</title><link href="http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags/" rel="alternate" type="text/html" title="Categories and Tags" /><published>2021-03-01T00:00:00+09:00</published><updated>2021-03-01T00:00:00+09:00</updated><id>http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags</id><content type="html" xml:base="http://localhost:4000/lora/cat%20m1/5g/misc/many-categories-and-tags/"><![CDATA[<p>카테고리와 태그 모음
-…………………………………………………………………………………………………………</p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="lora" /><category term="cat m1" /><category term="5g" /><category term="misc" /><category term="모듈" /><category term="인증" /><category term="GPS" /><category term="외장형 모뎀" /><category term="Qualcomm" /><summary type="html"><![CDATA[카테고리와 태그 모음 …………………………………………………………………………………………………………]]></summary></entry></feed>
+<p>​</p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="라즈베리파이" /><category term="우리넷" /><category term="사진" /><category term="RNDIS" /><category term="USB" /><summary type="html"><![CDATA[LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 보다 최대 전송 속도가 비교적 높기 때문에 실시간 트래킹 서비스 또는 사진 전송와 같은 중용량 및 실시간 응용에 사용하기 적합하다. 아래 예제에서는 우리넷 의 Cat.M1 외장형 모뎀을 이용하여 사진 전송이 가능한지 확인하고 속도를 검증해보도록 하겠다.]]></summary></entry></feed>
