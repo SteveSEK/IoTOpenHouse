@@ -21,12 +21,13 @@ last_modified_at: 2022-03-10T16:00:02-04:00
  
 ### 기타
  - [**NIPA 망적합성**](https://iot.nipa.kr/guide/iot/m2m.iot#)  NIPA 국내외 통신사 IoT 기술 규격에 따른 망적합성 무선성능측정 및 장비 지원
+ - [**LTE Reject Code**](https://telecompedia.net/lte-release-causes/)  Cause values for **EPS mobility management**/**EPS session management**
 
 
 ### IoT 적용 사례 
  - [**REMS**](https://rems.energy.or.kr/)  신재생에너지(태양광) 통합 모니터링 시스템
  - [**전기안전공사**](https://www.kes.go.kr/)  IoT 전기안정 단말장치
-
+ 
 
 ### LTE IoT Chipset
  - [**MDM9206**](https://www.qualcomm.com/products/qualcomm-9206-lte-modem)  Qualcomm - designed as a global multi-mode connectivity solution
