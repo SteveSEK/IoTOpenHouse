@@ -11,6 +11,13 @@ tags:
 
 ### Cat M1 AWS IoT 예제(BG96)
 
+## AWS IoT에서 사물 생성하기
+![image](https://user-images.githubusercontent.com/2126804/165430395-f3bb0cb2-0b0e-45b3-bba9-b55e561f92c7.png)
+![image](https://user-images.githubusercontent.com/2126804/165430439-59c5e51b-a219-47af-9b20-cc6d6061d0ec.png)
+![image](https://user-images.githubusercontent.com/2126804/165430459-b488aa20-18bb-4a65-b366-1b81374293cb.png)
+
+
+
 ## 디바이스 - 인증서 파일 저장하기
 
 이제부터 Cat M1 모듈을 AWS IoT에 연결하는 과정을 설명합니다.
@@ -160,7 +167,7 @@ OK
 
 AWS IoT에서 해당 사물의 섀도우를 선택하면, 디바이스가 보낸 상태가 바로 적용되는 것을 확인하실 수 있습니다.
 
-![][13]
+![image](https://user-images.githubusercontent.com/2126804/165430238-261d6e1f-6b94-43c0-b28c-6657394cf2e5.png)
 
 ## 디바이스 - 데이터 구독
 
@@ -178,7 +185,7 @@ OK
 
 아래는 사물의 섀도우에서 "Color"를 "White"로 업데이트해 보도록 하겠습니다. 그럼, AWS IoT는 사물에게 업데이트된 정보를 전달하게 됩니다. 이를 위해서, 아래 화면에서 처럼, [섀도우], [편집]을 선택하여, 섀도우 상태를 아래와 같이 편집하고 [저장]을 선택합니다.
 
-![][14]
+![image](https://user-images.githubusercontent.com/2126804/165430278-d07dee6a-dca0-4c7e-a138-184b67fea6ca.png)
 
 이 때, AWS IoT는 사물에게 이 데이터를 전달하게 되고, 디바이스에서는 아래와 같은 메시지를 받게 됩니다.
 ```
