@@ -169,6 +169,8 @@ AWS IoT에서 해당 사물의 섀도우를 선택하면, 디바이스가 보낸
 
 ![image](https://user-images.githubusercontent.com/2126804/165430238-261d6e1f-6b94-43c0-b28c-6657394cf2e5.png)
 
+![image](https://user-images.githubusercontent.com/2126804/165430833-b1c36f35-85a1-44ed-a1a9-dda8fa195fad.png)
+
 ## 디바이스 - 데이터 구독
 
 AWS IoT에서 디바이스에게 데이터를 전송하는 과정을 테스트 해보도록 하겠습니다.
