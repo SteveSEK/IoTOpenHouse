@@ -1,4 +1,303 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-05T17:29:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">Cat M1 HTTP 예제</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example/" rel="alternate" type="text/html" title="Cat M1 HTTP 예제" /><published>2021-06-22T00:00:00+09:00</published><updated>2021-06-22T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example/"><![CDATA[<h3 id="cat-m1-http-예제">Cat M1 HTTP 예제</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-28T14:16:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">우리넷 Cat M1 모뎀 동작 동영상</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-youtube/" rel="alternate" type="text/html" title="우리넷 Cat M1 모뎀 동작 동영상" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-youtube</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-youtube/"><![CDATA[<h3 id="우리넷-cat-m1-모뎀-동작-동영상">우리넷 Cat M1 모뎀 동작 동영상</h3>
+
+<p><a href="https://www.youtube.com/watch?v=IIEaF2EVE3s">YouTube https://www.youtube.com/watch?v=IIEaF2EVE3s</a></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="외장형 모뎀" /><category term="YouTube" /><summary type="html"><![CDATA[우리넷 Cat M1 모뎀 동작 동영상]]></summary></entry><entry><title type="html">Cat M1 AWS IoT 예제(BG96)</title><link href="http://localhost:4000/cat%20m1/bg96-aws-example/" rel="alternate" type="text/html" title="Cat M1 AWS IoT 예제(BG96)" /><published>2021-11-21T00:00:00+09:00</published><updated>2021-11-21T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/bg96-aws-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/bg96-aws-example/"><![CDATA[<h3 id="cat-m1-aws-iot-예제bg96">Cat M1 AWS IoT 예제(BG96)</h3>
+
+<h2 id="aws-iot에서-사물-생성하기">AWS IoT에서 사물 생성하기</h2>
+<p><img src="https://user-images.githubusercontent.com/2126804/165430395-f3bb0cb2-0b0e-45b3-bba9-b55e561f92c7.png" alt="image" />
+<img src="https://user-images.githubusercontent.com/2126804/165430439-59c5e51b-a219-47af-9b20-cc6d6061d0ec.png" alt="image" />
+<img src="https://user-images.githubusercontent.com/2126804/165430459-b488aa20-18bb-4a65-b366-1b81374293cb.png" alt="image" /></p>
+
+<h2 id="디바이스---인증서-파일-저장하기">디바이스 - 인증서 파일 저장하기</h2>
+
+<p>이제부터 Cat M1 모듈을 AWS IoT에 연결하는 과정을 설명합니다.
+먼저, 이전 단계([2. AWS - 인증서 및 보안 정책 생성])에서 다운로드 받은 인증서 파일들을 Cat M1 모듈에 저장하는 과정입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Cat M1 모듈의 모든 파일 리스트 지우기
+AT+QFDEL="*"
+
+OK
+
+// Cat M1 모듈의 파일 리스트 확인하기
+AT+QFLST
+
+OK
+
+// 루트 CA 인증서를 Cat M1 모듈 파일에 업로드
+AT+QFUPL="AmazonRootCA1.pem",1188,100
+CONNECT
++QFUPL: 1188,2d13
+
+OK
+
+// 사물에 대한 인증서를 Cat M1 모듈 파일에 업로드
+AT+QFUPL="YourCertificate.pem.crt",1220,100
+CONNECT
++QFUPL: 1220,7317
+
+OK
+
+// 프라이빗 키를 Cat M1 모듈 파일에 업로드
+AT+QFUPL="YourPrivate.pem.key",1675,100
+CONNECT
++QFUPL: 1675,372
+
+OK
+</code></pre></div></div>
+
+<h2 id="디바이스---aws-iot에-접속하기">디바이스 - AWS IoT에 접속하기</h2>
+
+<p>이제, 디바이스가 AWS IoT에 접속하는 과정을 설명하도록 하겠습니다.</p>
+
+<p>이전 단계(4. 디바이스 - 인증서 파일 저장하기)에서 Cat M1 모듈에 저장된 인증서 파일을 SSL 접속에 등록시키고, 여러가지 SSL 옵션을 설정합니다. 그리고, 엔드포인트 주소로 접속하여, AWS IoT에 접속합니다.
+자세한 AT Command 명령어에 대한 설명은 해당 가이드 문서를 확인하시거나 매뉴얼을 확인하시기 바랍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// SSL : 루트 CA 인증서 경로 설정
+AT+QSSLCFG="cacert",2,"AmazonRootCA1.pem"
+
+OK
+
+// SSL : 클라이언트 인증서 경로 설정
+AT+QSSLCFG="clientcert",2,"YourCertificate.pem.crt"
+
+OK
+
+// SSL : 클라이언트 프라이빗 키  경로 설정
+AT+QSSLCFG="clientkey",2,"YourPrivate.pem.key"
+
+OK
+
+// Manage server and client authentication if requested by the remote server
+AT+QSSLCFG="seclevel",2,2
+
+OK
+
+// TLS 1.1
+AT+QSSLCFG="sslversion",2,4
+
+OK
+
+// Ciphersuite : TLS_RSA_WITH_AES_256_CBC_SHA
+AT+QSSLCFG="ciphersuite",1,0x0035
+
+OK
+
+// Ignore validity check for certification
+AT+QSSLCFG="ignorelocaltime",1
++QSSLCFG: "ignorelocaltime",1,1
+
+OK
+
+// MQTT 접속을 SSL로 설정
+AT+QMTCFG="SSL",0,1,2
+
+OK
+
+// 엔드 포인트 주소 설정
+AT+QMTOPEN=0,"a3uz5t2azg1xdz-ats.iot.ap-northeast-2.amazonaws.com",8883
+
+OK
+
++QMTOPEN: 0,0
+
+// AWS IoT에 접속
+AT+QMTCONN=0,"WIZnet_IoTShield_CatM1"
+
+OK
+
++QMTCONN: 0,0,0
+</code></pre></div></div>
+
+<h2 id="6-디바이스---데이터-게시">6. 디바이스 - 데이터 게시</h2>
+
+<p>이제, 디바이스에서 AWS IoT로 데이터를 보내보도록 하겠습니다.</p>
+
+<p>디바이스 섀도우 서비스는 디바이스가 섀도우 상태 정보를 가져오거나 업데이트하거나 삭제할 수 있도록 예약된 MQTT 토픽를 사용합니다.
+이러한 토픽의 이름은 $aws/things/thingName/shadow로 시작합니다. 디바이스 섀도우를 업데이트하려면 $aws/things/thingName/shadow/update 토픽으로 상태 문서를 게시합니다. 상태 문서는 JSON 문서 포맷으로 전송이 됩니다.</p>
+
+<p>사물의 상태를 업데이트하려는 클라이언트는 다음과 같은 JSON 요청 상태 문서를 전송합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "state" : {
+        "desired" : {
+            "temp" : "20"
+            "led" : "on",
+         }
+     }
+}
+</code></pre></div></div>
+
+<p>섀도우를 업데이트하는 디바이스는 다음과 같은 JSON 요청 상태 문서를 전송합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "state" : {
+        "reported" : {
+            "temp" : "25"
+            "led" : "off",
+         }
+     }
+}
+</code></pre></div></div>
+
+<p>이제, 디바이스(Cat M1 모듈)가 AWS IoT에게 데이터를 보내보도록 하겠습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// AWS IoT에 데이터 Publish하기
+AT+QMTPUB=0,1,1,0,"$aws/things/WIZnet_IoTShield_CatM1/shadow/update"
+&gt; {"state":{"reported":{"Temp":"29","Color":"Red"}}}
+
+OK
+
++QMTPUB: 0,1,0
+</code></pre></div></div>
+
+<p>AWS IoT에서 해당 사물의 섀도우를 선택하면, 디바이스가 보낸 상태가 바로 적용되는 것을 확인하실 수 있습니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/2126804/165430238-261d6e1f-6b94-43c0-b28c-6657394cf2e5.png" alt="image" /></p>
+
+<h2 id="디바이스---데이터-구독">디바이스 - 데이터 구독</h2>
+
+<p>AWS IoT에서 디바이스에게 데이터를 전송하는 과정을 테스트 해보도록 하겠습니다.
+먼저, 이번에는 디바이스가 $aws/things/WIZnet_IoTShield_CatM1/shadow/update/accepted를 구독하도록 하겠습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// AWS IoT로부터 데이터 Subscribe하기
+AT+QMTSUB=0,1,"$aws/things/WIZnet_IoTShield_CatM1/shadow/update/accepted",1
+
+OK
+
++QMTSUB: 0,1,0,1
+</code></pre></div></div>
+
+<p>아래는 사물의 섀도우에서 “Color”를 “White”로 업데이트해 보도록 하겠습니다. 그럼, AWS IoT는 사물에게 업데이트된 정보를 전달하게 됩니다. 이를 위해서, 아래 화면에서 처럼, [섀도우], [편집]을 선택하여, 섀도우 상태를 아래와 같이 편집하고 [저장]을 선택합니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/2126804/165430278-d07dee6a-dca0-4c7e-a138-184b67fea6ca.png" alt="image" /></p>
+
+<p>이 때, AWS IoT는 사물에게 이 데이터를 전달하게 되고, 디바이스에서는 아래와 같은 메시지를 받게 됩니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+QMTSUB: 0,1,0,1
+
++QMTRECV: 0,1,"$aws/things/WIZnet_IoTShield_CatM1/shadow/update/accepted","{"state":{"reported":{"Temp":"29","Color":"Red"},"desired":{"Color":"White"}},"metadata":{"reported":{"Temp":{"timestamp":1553325144},"Color":{"timestamp":1553325144}},"desired":{"Color":{"timestamp":1553325144}}},"version":5,"timestamp":1553325144}"
+</code></pre></div></div>
+
+<p>이 데이터를 가독성 있게 정렬하면 아래와 같습니다. 즉, AWS IoT 섀도우 화면에서 수정한 내용이 그대로 적용되는 것을 확인하실 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ 
+  "state":{
+    "reported":{
+      "Temp":"29",
+      "Color":"Red"
+    },
+    "desired":{
+      "Color":"White"
+    }
+  },
+  .......................
+</code></pre></div></div>
+
+<h2 id="디바이스---aws-iot-접속-해제하기">디바이스 - AWS IoT 접속 해제하기</h2>
+
+<p>만약 AWS IoT와 연결을 해제하려고 한다면, AT+QMTDISC 명령어를 사용하면 됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AT+QMTDISC=0
+OK
+
++QMTDISC: 0,0
+</code></pre></div></div>
+
+<h2 id="디바이스---at-명령어-전체-로그">디바이스 - AT 명령어 전체 로그</h2>
+
+<p>아래 그림은 이번 AWS IoT 테스트에 사용된 디바이스의 전체 로그입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AT+QFDEL="*"
+
+OK
+
+AT+QFLST
+
+OK
+
+AT+QFUPL="AmazonRootCA1.pem",1188,100
+CONNECT
++QFUPL: 1188,2d13
+
+OK
+
+AT+QFUPL="YourCertificate.pem.crt",1220,100
+CONNECT
++QFUPL: 1220,7317
+
+OK
+
+AT+QFUPL="YourPrivate.pem.key",1675,100
+CONNECT
++QFUPL: 1675,372
+
+OK
+
+AT+QSSLCFG="cacert",2,"AmazonRootCA1.pem"
+
+OK
+
+AT+QSSLCFG="clientcert",2,"YourCertificate.pem.crt"
+
+OK
+
+AT+QSSLCFG="clientkey",2,"YourPrivate.pem.key"
+
+OK
+
+AT+QSSLCFG="seclevel",2,2
+
+OK
+
+AT+QSSLCFG="sslversion",2,4
+
+OK
+
+AT+QSSLCFG="ciphersuite",1,0x0035
+
+OK
+
+AT+QSSLCFG="ignorelocaltime",1
++QSSLCFG: "ignorelocaltime",1,1
+
+OK
+
+AT+QMTCFG="SSL",0,1,2
+
+OK
+
+AT+QMTOPEN=0,"a3uz5t2azg1xdz-ats.iot.ap-northeast-2.amazonaws.com",8883
+
+OK
+
++QMTOPEN: 0,0
+
+AT+QMTCONN=0,"WIZnet_IoTShield_CatM1"
+
+OK
+
++QMTCONN: 0,0,0
+
+AT+QMTPUB=0,1,1,0,"$aws/things/WIZnet_IoTShield_CatM1/shadow/update"
+&gt; {"state":{"reported":{"Temp":"29","Color":"Red"}}}
+
+OK
+
++QMTPUB: 0,1,0
+
+AT+QMTSUB=0,1,"$aws/things/WIZnet_IoTShield_CatM1/shadow/update/accepted",1
+
+OK
+
++QMTSUB: 0,1,0,1
+
++QMTRECV: 0,1,"$aws/things/WIZnet_IoTShield_CatM1/shadow/update/accepted","{"state":{"reported":{"Temp":"29","Color":"Red"},"desired":{"Color":"White"}},"metadata":{"reported":{"Temp":{"timestamp":1553325144},"Color":{"timestamp":1553325144}},"desired":{"Color":{"timestamp":1553325144}}},"version":5,"timestamp":1553325144}"
+
+AT+QMTDISC=0
+
+OK
+
++QMTDISC: 0,0
+
+</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="BG96" /><category term="Quectel" /><category term="AWS" /><summary type="html"><![CDATA[Cat M1 AWS IoT 예제(BG96)]]></summary></entry><entry><title type="html">Cat M1 HTTP 예제</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example/" rel="alternate" type="text/html" title="Cat M1 HTTP 예제" /><published>2021-06-22T00:00:00+09:00</published><updated>2021-06-22T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-HTTP-example/"><![CDATA[<h3 id="cat-m1-http-예제">Cat M1 HTTP 예제</h3>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">AT</span><span class="o">*</span><span class="no">WHTTP</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="no">GET</span><span class="p">,</span><span class="n">reqbin</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">echo</span>
 <span class="o">*</span><span class="no">WHTTP</span><span class="ss">:HTTPS</span><span class="p">,</span><span class="no">GET</span><span class="p">,</span><span class="n">reqbin</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">echo</span><span class="p">,</span><span class="mi">0</span><span class="p">,,,,,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span>
@@ -421,88 +720,4 @@ The protocol is tightly coupled to Microsoft’s programming interfaces and mode
   <li>펌웨어 프로그램 다운로드 및 압축해제</li>
   <li>WD-N400S 연결된 상태에서 exe 파일 (S430.XX.XXX.01_TD3S.exe) 실행</li>
   <li>펌웨어 업데이트 후, 버전 확인</li>
-</ol>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><summary type="html"><![CDATA[펌웨어 버전 확인 방법 AT Command 사용포트로 (UART1) 연결하여 다음과 같은 명령어를 실행하면 됩니다. AT$$SWVER]]></summary></entry><entry><title type="html">Cat.M1 GPS 사용 예제</title><link href="http://localhost:4000/cat%20m1/Cat-M1-GPS-example/" rel="alternate" type="text/html" title="Cat.M1 GPS 사용 예제" /><published>2021-04-01T00:00:00+09:00</published><updated>2021-04-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/Cat-M1-GPS-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/Cat-M1-GPS-example/"><![CDATA[<p>LTE Cat M1용의 칩셋과 모듈들은 대부분 GPS/GLONASS 기능을 지원하고 있다.</p>
-
-<h3 id="qualcomm-mdm9206">Qualcomm MDM9206</h3>
-<blockquote>
-  <p>Location : Satellite Systems Support: Beidou, Galileo, GLONASS, GPS <br />
-<cite><a href="https://www.qualcomm.com/products/qualcomm-9206-lte-modem">MDM9206</a></cite></p>
-</blockquote>
-
-<h3 id="altair-alt1250">Altair ALT1250</h3>
-<blockquote>
-  <p>Assisted GPS and GLONASS navigation systems are supported<br />
-<cite><a href="https://www.altair-semi.com/products/alt1250/">ALT1250</a></cite></p>
-</blockquote>
-
-<h3 id="우리넷-모뎀-gps-example">우리넷 모뎀 GPS Example</h3>
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Serial 통신 확인</span>
-<span class="n">AT</span>
-<span class="n">OK</span>
-
-<span class="c1">// S/W Version 확인 (2019년 12월 1일 이후 버전인지 확인)</span>
-<span class="n">AT</span><span class="err">$$</span><span class="n">SWVER</span>
-<span class="err">$$</span><span class="n">SWVER</span><span class="o">:</span> <span class="n">S430XX</span><span class="p">.</span><span class="mo">020</span><span class="p">.</span><span class="mo">01</span><span class="p">,</span> <span class="n">Mar</span> <span class="mi">24</span> <span class="mi">2021</span> <span class="mi">10</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mo">01</span>
-
-<span class="n">OK</span>
-
-<span class="c1">// GPS 기능 출력 인터페이스 설정</span>
-<span class="n">AT</span><span class="err">$$</span><span class="n">GPSCONF</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
-<span class="err">$$</span><span class="n">GPSCONF</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">252</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
-
-<span class="n">OK</span>
-
-<span class="c1">// GPS 기능 활성화</span>
-<span class="n">AT</span><span class="err">$$</span><span class="n">GPS</span>
-<span class="n">OK</span>
-<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span>
-<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">0</span>
-<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">49</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">44</span><span class="p">,</span><span class="mi">194</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">193</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">12</span><span class="o">-</span><span class="mi">42</span>
-<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">49</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">44</span><span class="p">,</span><span class="mi">194</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">193</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">12</span><span class="o">-</span><span class="mi">42</span>
-<span class="err">$$</span><span class="n">GPS</span><span class="p">,,,,,,,,</span><span class="n">V</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="o">-</span><span class="mi">49</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">44</span><span class="p">,</span><span class="mi">194</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">193</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span><span class="mi">12</span><span class="o">-</span><span class="mi">42</span>
-<span class="p">..............................</span>
-<span class="p">..............................</span>
-
-<span class="c1">//GPS 기능 비활성화</span>
-<span class="n">AT</span><span class="err">$$</span><span class="n">GPSSTOP</span>
-<span class="n">OK</span>
-</code></pre></div></div>
-
-<h3 id="유블럭스-gnss">유블럭스 GNSS</h3>
-
-<p>이에 반해, 유블럭스 같은 모듈은 Qualcomm MDM920x를 사용하고 있지만, 별도의 GNSS 모듈을 사용하도록 가이드하고 있다.
-<img src="http://localhost:4000/assets/images/ublox-sara-gnss.jpg" alt="image-center" class="align-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="GPS" /><category term="우리넷" /><category term="유블럭스" /><summary type="html"><![CDATA[LTE Cat M1용의 칩셋과 모듈들은 대부분 GPS/GLONASS 기능을 지원하고 있다.]]></summary></entry><entry><title type="html">Cat.M1 사진 전송</title><link href="http://localhost:4000/cat%20m1/Cat-M1-send-photo/" rel="alternate" type="text/html" title="Cat.M1 사진 전송" /><published>2021-04-01T00:00:00+09:00</published><updated>2021-04-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/Cat-M1-send-photo</id><content type="html" xml:base="http://localhost:4000/cat%20m1/Cat-M1-send-photo/"><![CDATA[<p>LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 보다 최대 전송 속도가 비교적 높기 때문에 실시간 트래킹 서비스 또는 사진 전송와 같은 중용량 및 실시간 응용에 사용하기 적합하다.<br />
-아래 예제에서는 <a href="http://www.woori-net.com">우리넷</a> 의 Cat.M1 외장형 모뎀을 이용하여 사진 전송이 가능한지 확인하고 속도를 검증해보도록 하겠다.</p>
-
-<p>​</p>
-<h3 id="하드웨어-설정---wd-n400s-외장형-모뎀-설정">하드웨어 설정 - ​WD-N400S 외장형 모뎀 설정</h3>
-
-<p>우리넷의 Cat.M1 외장형 모뎀을 사용하기 위한 방법은 두 가지 방법이 있다.</p>
-<ul>
-  <li>UART 인터페이스를 통해 AT 커맨드로 외장형 모뎀을 제어하는 방법</li>
-  <li>RNDIS(Remote NDIS) 모드로 사용하는 방법</li>
-</ul>
-
-<p>단, AT 커맨드를 이용하는 경우 UART 인터페이스(Baud Rate: 115200)를 사용하므로 Cat.M1 최대 전송 속도인 375kbps를 사용할 수 없으며, RNDIS 모드를 사용하면 Cat.M1 최대 전송 속도를 사용할 수 있다. 외장형 모뎀을 RNDIS 모드로 사용하기 위해서는 AT 커맨드로 ‘RNDISMODE=1’을 설정 후 재시작해야 한다.</p>
-
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AT</span><span class="err">$$</span><span class="n">SWVER</span>
-<span class="err">$$</span><span class="n">SWVER</span><span class="o">:</span> <span class="n">S130XX</span><span class="p">.</span><span class="mo">037</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">24</span> <span class="mi">2018</span> <span class="mi">18</span><span class="o">:</span><span class="mi">37</span><span class="o">:</span><span class="mi">48</span>
-
-<span class="n">OK</span>
-<span class="n">AT</span><span class="o">*</span><span class="n">RNDISMODE</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">OK</span>
-</code></pre></div></div>
-
-<h3 id="하드웨어-설정---라즈베리파이와-카메라">하드웨어 설정 - 라즈베리파이와 카메라</h3>
-<p>Cat M1 외장형 모뎀 설정이 끝나면, 아래와 같이 라즈베리파이, 카메라, Cat M1 외장형 모뎀 등을 연결한다.
-<img src="http://localhost:4000/assets/images/rpi-cat-m1-modem.png" alt="image-center" class="align-center" /></p>
-
-<h3 id="동작-동영상">동작 동영상</h3>
-
-<p>사진을 찍고 전송하는 동작 영상은 <a href="https://www.youtube.com/watch?v=xJbm8BLaym0">Youtube 동영상</a>을 참고하면 된다.</p>
-
-<h3 id="lte-catm1-속도">LTE Cat.M1 속도</h3>
-
-<p>총 50번 테스트를 진행하였으며, 평균 데이터 전송률은 <strong>298.37bps</strong> 이었습니다. 통신사에서 공표한 Cat.M1 최고 전송 속도의 80~90% 수준에 육박하는 것을 확인할 수 있었다.</p>
-
-<p>​</p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="라즈베리파이" /><category term="우리넷" /><category term="사진" /><category term="RNDIS" /><category term="USB" /><summary type="html"><![CDATA[LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 보다 최대 전송 속도가 비교적 높기 때문에 실시간 트래킹 서비스 또는 사진 전송와 같은 중용량 및 실시간 응용에 사용하기 적합하다. 아래 예제에서는 우리넷 의 Cat.M1 외장형 모뎀을 이용하여 사진 전송이 가능한지 확인하고 속도를 검증해보도록 하겠다.]]></summary></entry></feed>
+</ol>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><summary type="html"><![CDATA[펌웨어 버전 확인 방법 AT Command 사용포트로 (UART1) 연결하여 다음과 같은 명령어를 실행하면 됩니다. AT$$SWVER]]></summary></entry></feed>
