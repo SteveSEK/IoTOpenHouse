@@ -1,6 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-28T14:16:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">우리넷 Cat M1 모뎀 동작 동영상</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-youtube/" rel="alternate" type="text/html" title="우리넷 Cat M1 모뎀 동작 동영상" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-youtube</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-youtube/"><![CDATA[<h3 id="우리넷-cat-m1-모뎀-동작-동영상">우리넷 Cat M1 모뎀 동작 동영상</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-27T10:08:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">우리넷 Cat M1 모뎀 동작 동영상</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-youtube/" rel="alternate" type="text/html" title="우리넷 Cat M1 모뎀 동작 동영상" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-youtube</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-youtube/"><![CDATA[<h3 id="우리넷-cat-m1-모뎀-동작-동영상">우리넷 Cat M1 모뎀 동작 동영상</h3>
 
-<p><a href="https://www.youtube.com/watch?v=IIEaF2EVE3s">YouTube https://www.youtube.com/watch?v=IIEaF2EVE3s</a></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="외장형 모뎀" /><category term="YouTube" /><summary type="html"><![CDATA[우리넷 Cat M1 모뎀 동작 동영상]]></summary></entry><entry><title type="html">Cat M1 AWS IoT 예제(BG96)</title><link href="http://localhost:4000/cat%20m1/bg96-aws-example/" rel="alternate" type="text/html" title="Cat M1 AWS IoT 예제(BG96)" /><published>2021-11-21T00:00:00+09:00</published><updated>2021-11-21T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/bg96-aws-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/bg96-aws-example/"><![CDATA[<h3 id="cat-m1-aws-iot-예제bg96">Cat M1 AWS IoT 예제(BG96)</h3>
+<p><a href="https://www.youtube.com/watch?v=IIEaF2EVE3s">YouTube https://www.youtube.com/watch?v=IIEaF2EVE3s</a></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="외장형 모뎀" /><category term="YouTube" /><summary type="html"><![CDATA[우리넷 Cat M1 모뎀 동작 동영상]]></summary></entry><entry><title type="html">Cellular Network Attach Problem</title><link href="http://localhost:4000/cat%20m1/lte-attach-problem/" rel="alternate" type="text/html" title="Cellular Network Attach Problem" /><published>2022-01-11T00:00:00+09:00</published><updated>2022-01-11T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/lte-attach-problem</id><content type="html" xml:base="http://localhost:4000/cat%20m1/lte-attach-problem/"><![CDATA[<h2 id="cellular-network-attach-관련-at-command">Cellular Network Attach 관련 AT Command</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Check SIM
+AT+CPIN?
+
+// Check the signal strength.
+AT+CSQ
+
+// Return the current state of the network registration : Attach/Detach
+AT+CREG?
+
+// Check what network is the device on
+AT+COPS?
+
+// Returns / scans the list of available operators.
+AT+COPS=?
+
+// Attaches/detaches from the packet domain service.
+AT+CGATT=1/0
+
+// Return the current state of packet domain service
+AT+CGATT?
+AT+CGATT=1/0
+
+// PDP context parameter values for a PDP context identified by connection identifier;
+AT+CGDCONT?
+AT+CGDCONT=1,"IPV4V6"
+
+// Activate/Deactivate a PDP context
+AT+CGACT?
+
+// Get the assigned IP Address
+AT+CGPADDR=1
+
+</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="LTE" /><category term="Attach" /><summary type="html"><![CDATA[Cellular Network Attach 관련 AT Command]]></summary></entry><entry><title type="html">Cat M1 AWS IoT 예제(BG96)</title><link href="http://localhost:4000/cat%20m1/bg96-aws-example/" rel="alternate" type="text/html" title="Cat M1 AWS IoT 예제(BG96)" /><published>2021-11-21T00:00:00+09:00</published><updated>2021-11-21T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/bg96-aws-example</id><content type="html" xml:base="http://localhost:4000/cat%20m1/bg96-aws-example/"><![CDATA[<h3 id="cat-m1-aws-iot-예제bg96">Cat M1 AWS IoT 예제(BG96)</h3>
 
 <h2 id="aws-iot에서-사물-생성하기">AWS IoT에서 사물 생성하기</h2>
 <p><img src="https://user-images.githubusercontent.com/2126804/165430395-f3bb0cb2-0b0e-45b3-bba9-b55e561f92c7.png" alt="image" />
@@ -549,7 +583,22 @@ color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:i
 
 <p><img src="http://localhost:4000/assets/images/woorinet-aws-example-1.jpg" alt="image-center" class="align-center" />
 <img src="http://localhost:4000/assets/images/woorinet-aws-example-2.jpg" alt="image-center" class="align-center" />
-<img src="http://localhost:4000/assets/images/woorinet-aws-example-3.jpg" alt="image-center" class="align-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><category term="외장형 모뎀" /><category term="AWS" /><summary type="html"><![CDATA[Cat M1 AWS IoT 예제]]></summary></entry><entry><title type="html">PDP Conext 초기화</title><link href="http://localhost:4000/cat%20m1/pdp-context/" rel="alternate" type="text/html" title="PDP Conext 초기화" /><published>2021-05-01T00:00:00+09:00</published><updated>2021-05-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/pdp-context</id><content type="html" xml:base="http://localhost:4000/cat%20m1/pdp-context/"><![CDATA[<h3 id="pdp-context">PDP Context</h3>
+<img src="http://localhost:4000/assets/images/woorinet-aws-example-3.jpg" alt="image-center" class="align-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><category term="외장형 모뎀" /><category term="AWS" /><summary type="html"><![CDATA[Cat M1 AWS IoT 예제]]></summary></entry><entry><title type="html">RTK</title><link href="http://localhost:4000/misc/RTK/" rel="alternate" type="text/html" title="RTK" /><published>2021-06-01T00:00:00+09:00</published><updated>2021-06-01T00:00:00+09:00</updated><id>http://localhost:4000/misc/RTK</id><content type="html" xml:base="http://localhost:4000/misc/RTK/"><![CDATA[<h3 id="rtk-real-time-kinematic-positioning">RTK (Real-time kinematic positioning)</h3>
+
+<blockquote>
+  <p>Real-time kinematic positioning (RTK) is the application of surveying to correct for common errors in current satellite navigation (GNSS) systems. It uses measurements of the phase of the signal’s carrier wave in addition to the information content of the signal and relies on a single reference station or interpolated virtual station to provide real-time corrections, providing up to centimetre-level accuracy (see DGPS).[1] With reference to GPS in particular, the system is commonly referred to as carrier-phase enhancement, or CPGPS.[2] It has applications in land survey, hydrographic survey, and in unmanned aerial vehicle navigation.
+<cite><a href="https://en.wikipedia.org/wiki/Real-time_kinematic_positioning">RTK Wikipedia</a></cite></p>
+</blockquote>
+
+<h3 id="네트워크-rtk">네트워크 RTK</h3>
+<blockquote>
+  <p>GNSS 네트워크 방식으로 계산한 RTK 보정신호인 네트워크 RTK 보정신호는 사용자가 위치한 지점의 인근에 배치된 다수의 기준국들로부터 RTK 보정신호를 수집한 후 이를 종합적으로 활용하여 사용자 위치에 적합한 RTK 보정신호를 계산하는 방식으로 생성됩니다. 여러 기준국에서 계산한 정보들을 활용하여 사용자 위치에 적합한 RTK 보정신호를 계산하기 때문에 일반적인 RTK에 비하여 보다 넓은 지역에 적용할 수 있는 보정신호를 생성할 수 있다는 장점을 가지고 있습니다. 
+<cite><a href="https://gnss.eseoul.go.kr/system_sub2_02">서울특별시 네트워크 RTK 시스템</a></cite></p>
+</blockquote>
+
+<ul>
+  <li>서울특별시 네트워크 RTK 서비스 : <a href="https://gnss.eseoul.go.kr/service_sub1_01," title="서울특별시 네트워크 RTK 서비스">Link</a></li>
+</ul>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="misc" /><category term="RTK" /><summary type="html"><![CDATA[RTK (Real-time kinematic positioning)]]></summary></entry><entry><title type="html">PDP Conext 초기화</title><link href="http://localhost:4000/cat%20m1/pdp-context/" rel="alternate" type="text/html" title="PDP Conext 초기화" /><published>2021-05-01T00:00:00+09:00</published><updated>2021-05-01T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/pdp-context</id><content type="html" xml:base="http://localhost:4000/cat%20m1/pdp-context/"><![CDATA[<h3 id="pdp-context">PDP Context</h3>
 <p>PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. 
 IP가 GPRS에서 지원하는 PDP의 한 예이다. 
 단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다.
@@ -660,64 +709,4 @@ Devices that connect to Azure-based services such as Azure IoT Hub, Azure IoT Ce
 <span class="o">+</span><span class="no">CNUM</span><span class="p">:</span> <span class="p">,</span><span class="s2">"0122750****"</span><span class="p">,</span><span class="mi">129</span>
 
 <span class="no">OK</span>
-</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="BG96" /><category term="개통 로그" /><summary type="html"><![CDATA[BG96 개통 로그]]></summary></entry><entry><title type="html">RNDIS</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-rndis/" rel="alternate" type="text/html" title="RNDIS" /><published>2021-04-09T00:00:00+09:00</published><updated>2021-04-09T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-rndis</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-rndis/"><![CDATA[<h3 id="rndis">RNDIS</h3>
-
-<blockquote>
-  <p>The Remote Network Driver Interface Specification (RNDIS) is a Microsoft proprietary protocol used mostly on top of USB.[1] It provides a virtual Ethernet link to most versions of the Windows, Linux, and FreeBSD operating systems. Multiple revisions of a partial RNDIS specification are available from Microsoft, but Windows implementations have been observed to issue requests not included in that specification, and to have undocumented constraints.[2] <br />
-The protocol is tightly coupled to Microsoft’s programming interfaces and models, most notably the Network Driver Interface Specification (NDIS), which are alien to operating systems other than Windows. This complicates implementing RNDIS on non-Microsoft operating systems,[citation needed] but Linux,[3] FreeBSD,[4] NetBSD[5] and OpenBSD[6] implement RNDIS natively. <br />
-<cite><a href="https://en.wikipedia.org/wiki/RNDIS">RNDIS Wikipedia</a></cite></p>
-</blockquote>
-
-<h3 id="windows-rndis-diagram">Windows RNDIS Diagram</h3>
-<blockquote>
-  <p><img src="http://localhost:4000/assets/images/remote-ndis-architecture.png" alt="image-center" class="align-center" />
-<cite><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/network/overview-of-remote-ndis--rndis-">Microsoft Overview of Remote NDIS (RNDIS)</a></cite></p>
-</blockquote>
-
-<h3 id="우리넷-cat-m1-모듈-rndis-설정-방법">우리넷 Cat M1 모듈 RNDIS 설정 방법</h3>
-
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AT</span><span class="err">$$</span><span class="n">SWVER</span>
-<span class="err">$$</span><span class="n">SWVER</span><span class="o">:</span> <span class="n">S130XX</span><span class="p">.</span><span class="mo">037</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">24</span> <span class="mi">2018</span> <span class="mi">18</span><span class="o">:</span><span class="mi">37</span><span class="o">:</span><span class="mi">48</span>
-
-<span class="n">OK</span>
-
-<span class="c1">// WM-N400MSE RNDIS 모드 설정</span>
-<span class="n">AT</span><span class="o">*</span><span class="n">RNDISMODE</span><span class="o">=</span><span class="mi">1</span>
-<span class="o">*</span><span class="n">RNDISMODE</span><span class="o">=</span><span class="mi">1</span>
-
-<span class="n">OK</span>
-
-<span class="c1">// RNDIS 모드 적용을 위해 모듈 재부팅</span>
-<span class="n">AT</span><span class="o">*</span><span class="n">SKT</span><span class="o">*</span><span class="n">RESET</span>
-<span class="o">*</span><span class="n">SKT</span><span class="o">*</span><span class="n">RESET</span><span class="o">:</span><span class="mi">1</span>
-
-<span class="n">OK</span>
-</code></pre></div></div>
-
-<h3 id="windows에-rndis-추가된-모습">Windows에 RNDIS 추가된 모습</h3>
-<p><img src="http://localhost:4000/assets/images/windows-rndis-test-1.jpg" alt="image-center" /></p>
-
-<h3 id="windows-rndis-통신-테스트">Windows RNDIS 통신 테스트</h3>
-<p><img src="http://localhost:4000/assets/images/windows-rndis-test-2.jpg" alt="image-center" /></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="라즈베리파이" /><category term="우리넷" /><category term="RNDIS" /><category term="USB" /><summary type="html"><![CDATA[RNDIS]]></summary></entry><entry><title type="html">우리넷 모뎀 FW 업그레이드</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-fw-upgrade/" rel="alternate" type="text/html" title="우리넷 모뎀 FW 업그레이드" /><published>2021-04-03T00:00:00+09:00</published><updated>2021-04-03T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-fw-upgrade</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-fw-upgrade/"><![CDATA[<h3 id="펌웨어-버전-확인-방법">펌웨어 버전 확인 방법</h3>
-<p>AT Command 사용포트로 (UART1) 연결하여 다음과 같은 명령어를 실행하면 됩니다.
-<strong>AT$$SWVER</strong></p>
-
-<h3 id="펌웨어-다운로드">펌웨어 다운로드</h3>
-<ul>
-  <li>S430.XX.020.01_TD3S.zip: <a href="https://www.dropbox.com/s/ge63n741i3gvjkc/S430XX.020.01_TD3S.zip?dl=0," title="020 Download">Download</a></li>
-  <li>S430.XX.023.01_TD3S.zip: <a href="https://www.dropbox.com/s/30q0nd04jqup95x/S430XX.023.01_TD3S.zip?dl=0," title="023 Downloda">Download</a></li>
-</ul>
-
-<h3 id="환경설정">환경설정</h3>
-<ul>
-  <li>Windows 10 (64-bit)</li>
-  <li>Qualcomm Driver:  <a href="https://www.dropbox.com/s/37x1xx9wdbmr0r8/qud.win.1.1_installer_10052.9.zip?dl=0," title="Qualcomm Driver">Download</a></li>
-</ul>
-
-<h3 id="펌웨어-업데이트">펌웨어 업데이트</h3>
-<ol>
-  <li>Qualcomm Driver 설치 후, DP/DM 연결(UART연결이 아닌 USB RNDIS 연결, Interface B/D 사용시 Modem_USB Port 연결)</li>
-  <li>펌웨어 프로그램 다운로드 및 압축해제</li>
-  <li>WD-N400S 연결된 상태에서 exe 파일 (S430.XX.XXX.01_TD3S.exe) 실행</li>
-  <li>펌웨어 업데이트 후, 버전 확인</li>
-</ol>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="우리넷" /><summary type="html"><![CDATA[펌웨어 버전 확인 방법 AT Command 사용포트로 (UART1) 연결하여 다음과 같은 명령어를 실행하면 됩니다. AT$$SWVER]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="BG96" /><category term="개통 로그" /><summary type="html"><![CDATA[BG96 개통 로그]]></summary></entry></feed>

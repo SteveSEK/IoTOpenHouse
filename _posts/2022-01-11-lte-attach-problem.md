@@ -42,7 +42,4 @@ AT+CGACT?
 // Get the assigned IP Address
 AT+CGPADDR=1
 
-// Serial 통신 확인
-AT
-OK
 ```
