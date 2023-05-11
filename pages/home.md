@@ -20,9 +20,9 @@ feature_row:
     btn_class: "btn--primary"
     btn_label: "Learn more"
   - image_path: /assets/images/mm-catm1-module.png
-    title: "Cat M1 모듈 & 모뎀"
+    title: "LTE (Cat M1)/5G 모듈 & 모뎀"
     excerpt: "아래는 SK텔레콤의 인증을 받은 Cat M1 모듈들입니다. 일부 모듈을 제외하고는 대부분은 Qualcomm 사의 MDM9206(또는 MDM9205) 칩을 사용했습니다."
-    url: "/catm1/"
+    url: "/lte/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
   - image_path: /assets/images/mm-link.png

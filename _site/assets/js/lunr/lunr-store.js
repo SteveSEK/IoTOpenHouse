@@ -100,4 +100,16 @@ var store = [{
         "tags": ["외장형 모뎀","YouTube"],
         "url": "/cat%20m1/woorinet-modem-youtube/",
         "teaser": null
+      },{
+        "title": "IoT 셀룰러 모듈사 근황",
+        "excerpt":"Evolution of cellular IoT modules since 2010       Telit acquiring Thales’ IoT portfolio     “Telit Cinterion is expected to put further pressure on the other Western module suppliers due to its broadened portfolio including security and eSIM/iSIM capabilities. &gt;The company is also spinning off its automotive IoT unit to focus on Industrial IoT. We expect Telit Cinterion to become the second biggest IoT module company outside &gt;China when the acquisition closes.”    Semtech acquiring Sierra Wireless     “In the digital supply chain age, end-to-end tracking demands multiple connectivity modes. Hence, the collaboration of cellular and LoRa technology is expected to be &gt;beneficial for end-to-end tracking. Cellular components had been missing from the Semtech portfolio prior to the acquisition. For example, if chipsets such as the Lora &gt;Edge LR1120 get embedded into a combined module with LTE-M or Cat 1, the resulting module covers almost all major wireless types of connectivity, including Sub-GHz &gt;LoRa, SATCOM S-band, 2.4 GHz Lora, and Cellular IoT.”       출처 : IoT Analytics    ","categories": ["cellular"],
+        "tags": ["cellular module market"],
+        "url": "/cellular/cellular-iot-module-market/",
+        "teaser": null
+      },{
+        "title": "Cat 1 bis란",
+        "excerpt":"LTE Cat 1 bis  Cat 1 bis의 bis는 라틴어 “두 번째로 또는 다시”라는 단어에서 유래한 것이고, 여기에서 알 수 있듯이 Cat 1의 기본 기능을 기반으로 한 기술임을 알 수 있다. Cat 1 bis는 한 개의 안테나로 Cat 1 수준의 서비스를 제공하는 것을 목표로 하고 있고, LTE-M이나 NB-IoT 처럼, 사업자가 네트워크 SW를 업그레이드할 필요 없이 기존의 스마트폰 LTE 네트워크를 그대로 사용할 수 있다는 점도 장점이다.   LTE Category       출처 : Monogoto                           Cat 1       Cat 1 bis       Cat M1       Cat M2       Cat NB1       Cat NB2                       3GPP Release       8       13       13       14       13       14                 Downlink Peak       10 Mbit/s       10 Mbit/s       1 Mbit/s       ~4 Mbit/s       26 Kbit/s       127 Kbit/s                 Uplink Peak       5 Mbit/s       5 Mbit/s       1 Mbit/s       ~7 Mbit/s       66 Kbit/s(multi-tone)       159 Kbit/s                 Range (MCL)       144 dB       141 dB       156 dB       156 dB       164 dB       164 dB                 Antennas       2       1       1       1       1       1                 Power Saving       eDRX, PSM       eDRX, PSM       eDRX, PSM       eDRX, PSM       eDRX, PSM       eDRX, PSM                 Duplex       Full       Full or Half       Full or Half       Full or Half       Half       Half           참고:  LTE Cat M1과 LTE Cat M2는 LTE-M 또는 eMTC(enhanced Machine Type Communication)로 구분되기도 합니다.   ","categories": ["cellular"],
+        "tags": ["LTE Category, Cat 1 bis"],
+        "url": "/cellular/LTE-category/",
+        "teaser": null
       }]

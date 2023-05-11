@@ -3,8 +3,10 @@
 main:
   - title: "오픈 하우스 개요"
     url: /openhouse/
-  - title: "Cat M1"
-    url: /catm1/
+  - title: "IoT 통신"
+    url: /iot-connectivity/
+  - title: "LTE (Cat M1)/5G"
+    url: /lte/
   - title: "LoRa"
     url: /lora/
   - title: "포스팅"

@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-04T08:09:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">우리넷 Cat M1 모뎀 동작 동영상</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-youtube/" rel="alternate" type="text/html" title="우리넷 Cat M1 모뎀 동작 동영상" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-youtube</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-youtube/"><![CDATA[<h3 id="우리넷-cat-m1-모뎀-동작-동영상">우리넷 Cat M1 모뎀 동작 동영상</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-09T08:50:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IoT 오픈 하우스</title><subtitle>IoT 통신에 대한 정보와 자료 모음</subtitle><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><entry><title type="html">Cat 1 bis란</title><link href="http://localhost:4000/cellular/LTE-category/" rel="alternate" type="text/html" title="Cat 1 bis란" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/cellular/LTE-category</id><content type="html" xml:base="http://localhost:4000/cellular/LTE-category/"><![CDATA[<h3 id="lte-cat-1-bis">LTE Cat 1 bis</h3>
+<p>Cat 1 bis의 bis는 라틴어 “두 번째로 또는 다시”라는 단어에서 유래한 것이고, 여기에서 알 수 있듯이 Cat 1의 기본 기능을 기반으로 한 기술임을 알 수 있다.
+Cat 1 bis는 한 개의 안테나로 Cat 1 수준의 서비스를 제공하는 것을 목표로 하고 있고, LTE-M이나 NB-IoT 처럼, 사업자가 네트워크 SW를 업그레이드할 필요 없이 기존의 스마트폰 LTE 네트워크를 그대로 사용할 수 있다는 점도 장점이다.</p>
+
+<h3 id="lte-category">LTE Category</h3>
+<p><img src="../../pasteimages/2023-05-09-07-40-34.png" alt="" /></p>
+<blockquote>
+  <p><cite><a href="https://monogoto.io/2022/12/22/the-true-speed-of-cellular-iot/">출처 : Monogoto</a></cite></p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Cat 1</th>
+      <th>Cat 1 bis</th>
+      <th>Cat M1</th>
+      <th>Cat M2</th>
+      <th>Cat NB1</th>
+      <th>Cat NB2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3GPP Release</td>
+      <td>8</td>
+      <td>13</td>
+      <td>13</td>
+      <td>14</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>Downlink Peak</td>
+      <td>10 Mbit/s</td>
+      <td>10 Mbit/s</td>
+      <td>1 Mbit/s</td>
+      <td>~4 Mbit/s</td>
+      <td>26 Kbit/s</td>
+      <td>127 Kbit/s</td>
+    </tr>
+    <tr>
+      <td>Uplink Peak</td>
+      <td>5 Mbit/s</td>
+      <td>5 Mbit/s</td>
+      <td>1 Mbit/s</td>
+      <td>~7 Mbit/s</td>
+      <td>66 Kbit/s(multi-tone)</td>
+      <td>159 Kbit/s</td>
+    </tr>
+    <tr>
+      <td>Range (MCL)</td>
+      <td>144 dB</td>
+      <td>141 dB</td>
+      <td>156 dB</td>
+      <td>156 dB</td>
+      <td>164 dB</td>
+      <td>164 dB</td>
+    </tr>
+    <tr>
+      <td>Antennas</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Power Saving</td>
+      <td>eDRX, PSM</td>
+      <td>eDRX, PSM</td>
+      <td>eDRX, PSM</td>
+      <td>eDRX, PSM</td>
+      <td>eDRX, PSM</td>
+      <td>eDRX, PSM</td>
+    </tr>
+    <tr>
+      <td>Duplex</td>
+      <td>Full</td>
+      <td>Full or Half</td>
+      <td>Full or Half</td>
+      <td>Full or Half</td>
+      <td>Half</td>
+      <td>Half</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice--info"><strong>참고:</strong> 
+<em>LTE Cat M1</em>과 <em>LTE Cat M2</em>는 <em>LTE-M</em> 또는 <em>eMTC(enhanced Machine Type Communication)</em>로 구분되기도 합니다.</p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cellular" /><category term="LTE Category, Cat 1 bis" /><summary type="html"><![CDATA[LTE Cat 1 bis Cat 1 bis의 bis는 라틴어 “두 번째로 또는 다시”라는 단어에서 유래한 것이고, 여기에서 알 수 있듯이 Cat 1의 기본 기능을 기반으로 한 기술임을 알 수 있다. Cat 1 bis는 한 개의 안테나로 Cat 1 수준의 서비스를 제공하는 것을 목표로 하고 있고, LTE-M이나 NB-IoT 처럼, 사업자가 네트워크 SW를 업그레이드할 필요 없이 기존의 스마트폰 LTE 네트워크를 그대로 사용할 수 있다는 점도 장점이다.]]></summary></entry><entry><title type="html">IoT 셀룰러 모듈사 근황</title><link href="http://localhost:4000/cellular/cellular-iot-module-market/" rel="alternate" type="text/html" title="IoT 셀룰러 모듈사 근황" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/cellular/cellular-iot-module-market</id><content type="html" xml:base="http://localhost:4000/cellular/cellular-iot-module-market/"><![CDATA[<h3 id="evolution-of-cellular-iot-modules-since-2010">Evolution of cellular IoT modules since 2010</h3>
+
+<figure class="wp-block-video"><video controls="" loop="" muted="" autoplay="" width="600" src="https://h9e3r9w2.rocketcdn.me/wp/wp-content/uploads/2022/09/Cellular-IoT-Modules-in-China-Market-Share-2010-26-hq.mp4"></video></figure>
+
+<figure class="wp-block-video"><video controls="" loop="" muted="" autoplay="" width="600" src="https://h9e3r9w2.rocketcdn.me/wp/wp-content/uploads/2022/09/Cellular-IoT-Modules-outside-China-Market-Share-2010-26-hq.mp4"></video></figure>
+
+<h4 id="telit-acquiring-thales-iot-portfolio">Telit acquiring Thales’ IoT portfolio</h4>
+<blockquote>
+  <p>“Telit Cinterion is expected to put further pressure on the other Western module suppliers due to its broadened portfolio including security and eSIM/iSIM capabilities. &gt;The company is also spinning off its automotive IoT unit to focus on Industrial IoT. We expect Telit Cinterion to become the second biggest IoT module company outside &gt;China when the acquisition closes.”</p>
+</blockquote>
+
+<h4 id="semtech-acquiring-sierra-wireless">Semtech acquiring Sierra Wireless</h4>
+<blockquote>
+  <p>“In the digital supply chain age, end-to-end tracking demands multiple connectivity modes. Hence, the collaboration of cellular and LoRa technology is expected to be &gt;beneficial for end-to-end tracking. Cellular components had been missing from the Semtech portfolio prior to the acquisition. For example, if chipsets such as the Lora &gt;Edge LR1120 get embedded into a combined module with LTE-M or Cat 1, the resulting module covers almost all major wireless types of connectivity, including Sub-GHz &gt;LoRa, SATCOM S-band, 2.4 GHz Lora, and Cellular IoT.”</p>
+</blockquote>
+
+<blockquote>
+  <p><cite><a href="https://iot-analytics.com/iot-modules/">출처 : IoT Analytics</a></cite></p>
+</blockquote>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cellular" /><category term="cellular module market" /><summary type="html"><![CDATA[Evolution of cellular IoT modules since 2010]]></summary></entry><entry><title type="html">우리넷 Cat M1 모뎀 동작 동영상</title><link href="http://localhost:4000/cat%20m1/woorinet-modem-youtube/" rel="alternate" type="text/html" title="우리넷 Cat M1 모뎀 동작 동영상" /><published>2022-03-02T00:00:00+09:00</published><updated>2022-03-02T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/woorinet-modem-youtube</id><content type="html" xml:base="http://localhost:4000/cat%20m1/woorinet-modem-youtube/"><![CDATA[<h3 id="우리넷-cat-m1-모뎀-동작-동영상">우리넷 Cat M1 모뎀 동작 동영상</h3>
 
 <p><a href="https://www.youtube.com/watch?v=IIEaF2EVE3s">YouTube https://www.youtube.com/watch?v=IIEaF2EVE3s</a></p>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="외장형 모뎀" /><category term="YouTube" /><summary type="html"><![CDATA[우리넷 Cat M1 모뎀 동작 동영상]]></summary></entry><entry><title type="html">Cellular Network Attach Problem</title><link href="http://localhost:4000/cat%20m1/lte-attach-problem/" rel="alternate" type="text/html" title="Cellular Network Attach Problem" /><published>2022-01-11T00:00:00+09:00</published><updated>2022-01-11T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/lte-attach-problem</id><content type="html" xml:base="http://localhost:4000/cat%20m1/lte-attach-problem/"><![CDATA[<h2 id="cellular-network-attach-관련-at-command">Cellular Network Attach 관련 AT Command</h2>
 
@@ -631,82 +739,4 @@ IP가 GPRS에서 지원하는 PDP의 한 예이다.
 
 <span class="no">AT</span><span class="o">+</span><span class="no">CFUN</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
 <span class="no">OK</span>
-</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="pdp context" /><category term="개통 초기화" /><category term="글로벌심" /><summary type="html"><![CDATA[PDP Context PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. IP가 GPRS에서 지원하는 PDP의 한 예이다. 단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다. 즉, 외부 Packet Data Network로의 연결을 위한 여러가지 종류 정보의 집합 이라고 할수 있다.]]></summary></entry><entry><title type="html">IoT 디바이스 인증서 업데이트</title><link href="http://localhost:4000/cat%20m1/iot-device-certificate-update/" rel="alternate" type="text/html" title="IoT 디바이스 인증서 업데이트" /><published>2021-04-13T00:00:00+09:00</published><updated>2021-04-13T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/iot-device-certificate-update</id><content type="html" xml:base="http://localhost:4000/cat%20m1/iot-device-certificate-update/"><![CDATA[<h3 id="iot-디바이스의-인증서-만료-문제">IoT 디바이스의 인증서 만료 문제</h3>
-
-<h5 id="root-ca-인증서-만료-문제">Root CA 인증서 만료 문제</h5>
-<blockquote>
-  <p>Expiring root certificates will cause devices like smart TVs and refrigerators to fail in the next few years, security researcher Scott Helme has warned. <br />
-Secure internet connections depend on the server presenting a valid certificate to the client, the most common problem being that the server certificate is out of date, easily fixed by the server admin.
-In order to validate the certificate, though, the client must have a trusted root certificate from the issuing authority, and this, says Helme, is a problem for devices that never get updated.  <br />
-<cite><a href="https://www.theregister.com/2020/06/10/iot_trouble_root_certificates_expire/">An Internet of Trouble lies ahead as root certificates begin to expire en masse, warns security researcher</a></cite></p>
-
-</blockquote>
-
-<h5 id="디바이스-인증서-로테이션">디바이스 인증서 로테이션</h5>
-<p>위에 언급된 Root CA 인증서 만료 문제 외에도, IoT 디바이스의 인증서를 업데이트해야 하는 상항도 발생할 수 있다.</p>
-
-<h3 id="aws-iot-deice-defender--인증서-만료-감지">AWS IoT Deice Defender : 인증서 만료 감지</h3>
-<p>AWS IoT Core의 AWS IoT Device Defender에서는 계정 및 디바이스와 관련된 설정 및 정책에서 보안 조치가 구현되어 있는지 확인하고 있다. 이 기능 중에는 CA 및 디바이스의 인증서에 대한 해지 여부, 인증서 만료 여부, 활성화 상태, 손상 상태 등을 검사하고, 감지하는 기능을 제공하고 있다. 아래는 인증서 만료에 대한 기능에 대한 설명이다.</p>
-
-<blockquote>
-  <p>A CA certificate is expiring within 30 days or has expired. <br />
-This check appears as CA_CERTIFICATE_EXPIRING_CHECK in the CLI and API. <br />
-<cite><a href="https://docs.aws.amazon.com/iot/latest/developerguide/audit-chk-ca-cert-approaching-expiration.html ">CA certificate expiring</a></cite></p>
-</blockquote>
-
-<blockquote>
-  <p>A device certificate is expiring within 30 days or has expired. <br />
-This check appears as DEVICE_CERTIFICATE_EXPIRING_CHECK in the CLI and API. <br />
-<cite><a href="https://docs.aws.amazon.com/iot/latest/developerguide/audit-chk-device-cert-approaching-expiration.html ">Device certificate expiring</a></cite></p>
-</blockquote>
-
-<h3 id="azure-sphere-security-service--인증서-관리를-포함한-토탈-iot-보안-솔루션-제공">Azure Sphere Security Service : 인증서 관리를 포함한 토탈 IoT 보안 솔루션 제공</h3>
-<p>마이크로소프트는 인증서 유효성 검사는 물론이고, <a href="https://docs.microsoft.com/en-us/azure-sphere/product-overview/what-is-azure-sphere">Azure Sphere</a>라고 하는 IoT 토탈 보안 솔루션도 제공하고 있다. 이를 통해서, 인증서 업데이트를 포함한 모든 보안 서비스들을 제공받을 수 있다.</p>
-<blockquote>
-  <p>Every Azure Sphere device relies on the Trusted Root store, which is part of the Azure Sphere OS. The Trusted Root store contains a list of root certificates that are used to validate the identity of the Azure Sphere Security Service when the device connects for device authentication and attestation (DAA), over-the-air (OTA) update, or error reporting. These certificates are provided with the OS. <br />
-When daily attestation succeeds, the device receives two certificates: an update certificate and a customer certificate. The update certificate enables the device to connect to the Azure Sphere Update Service to get software updates and to upload error reports; it is not accessible to applications or through the command line. The customer certificate, sometimes called the DAA certificate, can be used by applications to connect to third-party services such wolfSSL that use transport layer security (TLS). This certificate is valid for 24 hours. Applications can retrieve it programmatically by calling the DeviceAuth_GetCertificatePath function. <br />
-Devices that connect to Azure-based services such as Azure IoT Hub, Azure IoT Central, and Azure IoT Edge must present their Azure Sphere tenant CA certificate to authenticate their Azure Sphere tenant. The azsphere ca-certificate download command in the CLI returns the tenant CA certificate for such uses.  <br />
-<cite><a href="https://docs.microsoft.com/en-us/azure-sphere/deployment/certificate-use-with-azure-sphere ">Certificate use with Azure Sphere</a></cite></p>
-</blockquote>
-
-<h3 id="해결책">해결책</h3>
-<p>IoT 디바이스의 인증서 만료 문제대 대한 가장 간단한 방법은 인증서 만료 기간을 수십년 이상으로 설정하는 방법이 있고, 클라우드와의 C2D 메시지 등을 이용해서, 인증서 페이로드 데이터를 디바이스에게 전송하는 방법도 있다.</p>
-
-<blockquote>
-  <p>“…There is no hard-rule to set the maximum expiration of your self-signed X509 certificate deployed to Azure IoT Hub. Nevertheless even if the certificate is long-lived, you need to account that it can expire and there needs to be a way to update the certificate on the device…”  <br />
-“…I have created a test root CA cert with a validity of 100 years and uploaded it to IoTHub…”  <br />
-<cite><a href="https://docs.microsoft.com/en-us/answers/questions/438891/maximum-root-ca-expiration.html ">Maximum ROOT_CA Expiration</a></cite></p>
-</blockquote>
-
-<p>당연한 결론이겠지만, IoT 디바이스의 인증서 관리에 대한 가장 좋은 방법은 디바이스의 주기적인 업데이트를 지원하는 일인 것 같다.</p>
-<blockquote>
-  <p>The best solution to this issue is ‘Updates’. There must be updated one way or the other. Being a software/device builder who works around public key infrastructure for secure communication, you need to consider the fact that not updating your Root CA will have a huge impact on your service. Even if you are working with legacy clients, your choice of CA will have a vast influence on them.  <br />
-<cite><a href="https://www.ssl2buy.com/wiki/expired-root-certificates-main-reason-to-weaken-iot-devices ">Expired Root Certificates: The Main Reason to Weaken IoT Devices</a></cite></p>
-</blockquote>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="인증서 만료" /><category term="root ca" /><category term="azure" /><category term="aws" /><summary type="html"><![CDATA[IoT 디바이스의 인증서 만료 문제]]></summary></entry><entry><title type="html">BG96 개통 로그</title><link href="http://localhost:4000/cat%20m1/bg96-open-sim-log/" rel="alternate" type="text/html" title="BG96 개통 로그" /><published>2021-04-12T00:00:00+09:00</published><updated>2021-04-12T00:00:00+09:00</updated><id>http://localhost:4000/cat%20m1/bg96-open-sim-log</id><content type="html" xml:base="http://localhost:4000/cat%20m1/bg96-open-sim-log/"><![CDATA[<h3 id="bg96-개통-로그">BG96 개통 로그</h3>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">RDY</span>
-
-<span class="o">+</span><span class="no">CFUN</span><span class="p">:</span> <span class="mi">1</span>
-
-<span class="no">APP</span> <span class="no">RDY</span>
-
-<span class="o">+</span><span class="no">CPIN</span><span class="p">:</span> <span class="no">READY</span>
-
-<span class="o">+</span><span class="no">QUSIM</span><span class="p">:</span> <span class="mi">1</span>
-
-<span class="o">+</span><span class="no">QIND</span><span class="p">:</span> <span class="no">SMS</span> <span class="no">DONE</span>
-
-<span class="o">+</span><span class="no">CPIN</span><span class="p">:</span> <span class="no">READY</span>
-
-<span class="o">+</span><span class="no">QUSIM</span><span class="p">:</span> <span class="mi">1</span>
-
-<span class="o">+</span><span class="no">QIND</span><span class="p">:</span> <span class="no">SMS</span> <span class="no">DONE</span>
-<span class="no">AT</span><span class="o">+</span><span class="no">QCDS</span>
-<span class="o">+</span><span class="no">QCDS</span><span class="p">:</span> <span class="s2">"SRV"</span><span class="p">,</span><span class="s2">"CAT-M"</span><span class="p">,</span><span class="mi">45012</span><span class="p">,</span><span class="mi">2500</span><span class="p">,</span><span class="mi">13</span><span class="no">B</span><span class="o">***</span><span class="p">,</span><span class="no">R13</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">368</span><span class="p">,</span><span class="mi">2058</span><span class="p">,</span><span class="o">-</span><span class="mi">74</span><span class="p">,</span><span class="o">-</span><span class="mi">99</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
-
-<span class="no">OK</span>
-<span class="no">AT</span><span class="o">+</span><span class="no">CNUM</span>
-<span class="o">+</span><span class="no">CNUM</span><span class="p">:</span> <span class="p">,</span><span class="s2">"0122750****"</span><span class="p">,</span><span class="mi">129</span>
-
-<span class="no">OK</span>
-</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="BG96" /><category term="개통 로그" /><summary type="html"><![CDATA[BG96 개통 로그]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>SteveKim</name><email>stevekim@wiznet.io</email></author><category term="cat m1" /><category term="pdp context" /><category term="개통 초기화" /><category term="글로벌심" /><summary type="html"><![CDATA[PDP Context PDP(Packet Data Protocol)는 GPRS(General Packet Radio Service) 망과 통신을 위해 외부 패킷 데이터망이 사용하는 네트워크 프로토콜이다. IP가 GPRS에서 지원하는 PDP의 한 예이다. 단말과 네트워크 사이의 패킷 데이타 전송이 가능하게 하는 연결이 이루어지는데, 여기에 사용되는 정보를 PDP Context라고 한다. 즉, 외부 Packet Data Network로의 연결을 위한 여러가지 종류 정보의 집합 이라고 할수 있다.]]></summary></entry></feed>
