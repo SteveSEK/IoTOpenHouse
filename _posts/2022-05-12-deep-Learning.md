@@ -1,0 +1,787 @@
+#### 1. Library import​
+```
+import pandas as pd​
+import numpy as np​
+```
+#### 2. Library import​
+```
+import matplot.pyplot as plt​
+import seaborn as sns​	
+```
+#### 3. Data Load
+```
+df = pd.read_csv(‘filename.csv’)​
+df = pd.read_json(A01.json)​
+df = pd.DataFrame(data)​
+df = pd.read_excel('data.xls’)​
+
+tips = sns.load_dataset("tips")​
+```
+#### 4. Visualization
+```
+sns.pairplot(df, x_vars[‘col1’,’col2’], y_vars=‘col3’)​
+sns.histplot(df,bins=30,kde=True)​
+sns.scatterplot(data=df,x=‘col1’, y=‘col2’)​
+```
+```
+​data = df.corr() ​
+plt.figure(figsize=(8, 5))​
+sns.heatmap(data=df,annot=True) plt.show()​
+```
+#### ​5. Delete outlier & missing values
+```
+df=df.drop(df[df['size']>100].index,axis=0)​
+tips = tips.drop(tips[tips['size']==6].index, axis=0)​
+
+df.drop('col',axis=1,inplace=True)​
+tips=tips.drop(['sex','smoker'],axis=1)​
+
+df = df.dropna(axis=0)​
+```
+#### 6. Data preparation
+```
+df.info() / head() ​
+df.shape​
+df.isnull().sum() / df.isna().sum() # 동일​
+df.describe()​
+df['col'].value_counts()​
+df['col'].replace(' ', '0', inplace=True)​
+tips = tips.head(10)​
+```
+#### 7. Label Encoder
+```
+from sklearn.preprocessing import LabelEncoder 
+tips['sex'] = le.fit_transform(tips['sex'])​
+
+labels = ['col1', 'col2', 'col3'] ​
+for i in labels: ​
+    le = LabelEncoder() ​
+    le = le.fit(price[i]) ​
+    price[i] = le.transform(price[i])​
+```
+#### 8. One-Hot Encoder
+```
+df=pd.get_dummies(df,columns=['col'],drop_first=True)​
+tips=pd.get_dummies(tips,columns=['day'],drop_first=True)​
+```
+#### 9. Data Split
+```
+from sklearn.model_selection import train_test_split
+X = tips.drop('total_bill',axis=1) ​
+y = tips['total_bill’]   # series ​
+X_train,X_valid,y_train, y_valid = ​train_test_split(X,y, random_state=58,test_size=0.2)​
+```
+#### 10. Standardization/Normalization
+```
+from sklearn.preprocessing import StandardScaler ​
+scaler = StandardScaler() ​
+X_train_scaled = scaler.fit_transform(X_train) ​
+X_valid_scaled = scaler.transform(X_valid)​
+
+from sklearn.preprocessing import MinMaxScaler​
+minmax_scaler = MinMaxScaler()​
+train_minmax = minmax_scaler.fit_transform(X_train)​
+train_minmax = pd.DataFrame(train_minmax, index=X_train.index, columns=X_train.columns)​
+```
+#### 11. Machine Learning/Random Forest
+```
+from sklearn.ensemble import RandomForestRegressor ​
+rf_model = RandomForestRegressor(random_state=42, n_estimators=70, max_depth=12, min_samples_split=3, min_samples_leaf=2)​
+rf_model.fit(X_train_scaled,y_train)​
+```
+#### 12. MSE/MAE
+```
+y_pred = rf_model.predict(X_valid) ​
+
+// MSE 계산 ​
+from sklearn.metrics import mean_squared_error​
+mse = mean_squared_error(y_valid, y_pred)​
+
+// MAE 계산 ​
+from sklearn.metrics import mean_absolute_error​
+mae = mean_absolute_error(y_valid, y_pred) ​
+```
+​#### 13. Deep Learning Model
+```
+import tensorflow as tf​
+from tensorflow.keras.models import Sequential​
+from tensorflow.keras.layers import Dense, Dropout​
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint​
+
+​model = Sequential()​
+model.add(Dense(64, activation='relu', input_shape=(6,))) model.add(Dropout(0.2))  ​
+model.add(Dense(128, activation='relu'))​
+model.add(Dropout(0.2))  ​
+model.add(Dense(256, activation='relu'))​
+model.add(Dropout(0.2))  ​
+model.add(Dense(512, activation='relu'))​
+model.add(Dropout(0.2))  ​
+model.add(Dense(1))  // 출력 레이어​
+
+// Loss Function & Optimization Setting​
+model.compile(loss='mean_squared_error', optimizer='adam')​
+
+// EarlyStopping Callback​
+estopping = EarlyStopping(monitor='val_loss', patience=5)​
+
+// ModelCheckpoint Callback​
+mcheckpoint = ModelCheckpoint('AI_best_model.h5', monitor='val_loss', save_best_only=True)​
+
+// Training the model​
+history = model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=100, callbacks=[estopping, mcheckpoint])​
+```
+​#### 14. Model evaluation
+```
+import matplotlib.pyplot as plt​
+
+// 학습 MSE와 검증 MSE 추출​
+train_mse = history.history['loss']​
+valid_mse = history.history['val_loss']​
+
+// Graph​
+plt.plot(train_mse, label='mse')​
+plt.plot(valid_mse, label='val_mse')​
+
+// Title, etc​
+plt.legend()​
+plt.title('Model MSE')​
+plt.xlabel('Epochs')​
+plt.ylabel('MSE')​
+
+// Show the graph​
+plt.show()​
+```
+
+ 
+#### 1. 필요한 라이브러리 설치 및 임포트
+```
+#가장 많이 사용하는 라이브러리 설치 - 별칭(alias) 사용
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import os
+import warnings
+import matplotlib.pyplot as plt
+warnings.filterwarnings(action='ignore')
+
+#seaborn import시 에러가 나타나면 해당 코드 실행
+!pip install seaborn
+
+#AIDU 내부 연동을 위한 라이브러리 & 변수 
+from aicentro.session import Session
+from aicentro.framework.keras import Keras as AiduFrm
+
+aidu_session = Session(verify=False)
+aidu_framework = AiduFrm(session=aidu_session)
+```
+
+#### 2. 데이터 로드
+```
+df = pd.read_csv('파일경로')
+df = pd.read_csv('/data/데이터파일이름.csv')
+df = pd.read_csv("https://raw.githubusercontent.com/DA4BAM/dataset/master/mobile_NA2.csv")
+```
+
+#### 3. 데이터 분석(구성확인, 상관분석, 시각화)
+```
+#데이터 전체 구조 보기
+df
+
+#데이터 정보 확인
+df.info()
+
+#데이터 (행,열) 크기 확인
+df.shape
+
+#데이터 전체 컬럼명 보기
+df.columns
+
+#데이터 상위/하위 5행 출력
+df.head()
+df.tail()
+
+#데이터 통계 보기
+df.describe()
+
+#중앙값(숫자형)
+df['INCOME'].median()
+df.median()
+
+#컬럼 내 각각의 값 분포 -> 제일 위 값이 최빈값
+df['INCOME'].value_counts()
+#전체
+#[df[c].value_counts() for c in df]
+#특정 컬럼 내 각각의 값 분포 비율
+df['REPORTED_SATISFACTION'].value_counts(normalize=True)
+
+#특정 컬럼 내 유일한 값 확인
+df['REPORTED_SATISFACTION'].unique()
+
+#데이터 결측치(null값) 확인
+df.isna().sum()
+
+#데이터 타입 확인
+df.dtypes
+
+#두 변수간 상관 관계 분석
+df.corr()
+
+# 레이블 선택
+y = df['OVERAGE']
+y
+```
+```
+### 시각화 ###
+
+import matplotlib.pyplot as plt
+pip install seaborn
+import seaborn as sns
+%matplotlib inline
+
+#차트 그리기
+plt.title('Accuracy')
+plt.plot(hist.history['acc'], label='acc')
+plt.plot(hist.history['val_acc'], label='val_acc')
+plt.legend()
+plt.xlabel('Epochs')
+plt.ylabel('Acc')
+plt.show()
+
+#산점도(Scatter plot)
+plt.scatter(x, y)
+
+#막대 그래프 그리기
+plt.bar(x, y)
+
+#히스토그램 그리기
+plt.hist(values)
+
+#히트맵(Heatmap)
+sns.heatmap(df.corr(), cmap="Blues", annot=True)
+sns.heatmap(df.corr())
+
+#박스 플롯(Box plot)
+plt.boxplot(df['HANDSET_PRICE'])
+plt.show()
+
+sns.boxplot(y='AVERAGE_CALL_DURATION', x='CHURN', data=df)
+
+#pairplot
+sns.pairplot(data=df, x_vars=['컬럼', '컬럼', '컬럼'], y_vars=['컬럼', '컬럼', '컬럼'])
+```
+
+#### 4. 데이터 전처리 (결측치 처리, 라벨인코딩 등)
+```
+#특정 컬럼 삭제 -> axis=0 행 삭제 / axis=1 열 삭제
+df1 = df.drop(['id', 'COLLEGE', 'LEFTOVER'], axis=1)
+
+#값 변경 -> 인자(변경 전 값, 변경 후 값, inplace=True)
+df1['REPORTED_USAGE_LEVEL'].replace('avg', 'middle', inplace=True)
+
+#특정 값이 있는 행만 가져오기
+df1[df1['OVERAGE'] == 10]
+
+#특정 값의 개수 확인
+(df['REPORTED_SATISFACTION'] == 'very_unsat').sum()
+
+#전체 값의 개수 확인
+df1.apply(lambda x: x.isin([0]).sum())
+
+## 결측치 처리 ##
+
+#데이터 결측치(null값) 확인
+df.isna().sum()
+
+#결측치 중간값으로 채우기 -> mean : 평균, mode : 최빈값
+df['HOUSE'].fillna(df['HOUSE'].mean, inplace=True)
+
+#결측치 삭제하기
+df1 = df1.dropna()
+
+## 이상치 처리 ##
+
+#이상치 데이터 확인
+sns.boxplot(x='CHURN', y='LEFTOVER', data=df)
+```
+```
+## 라벨 인코딩 ##
+
+#데이터 복사
+df1_copy = df.copy()
+
+#데이터 타입 변경
+df1['SeniorCitizen'] = df1['SeniorCitizen'].astype(float)
+
+#특정 데이터 타입의 컬럼 선택
+c = df1.select_dtypes(include='object')
+c.dtypes
+
+#문자를 숫자로 변경(라벨 인코딩)
+from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder()
+df['REPORTED_USAGE_LEVEL'] = le.fit_transform(df['REPORTED_USAGE_LEVEL'])
+df['REPORTED_USAGE_LEVEL'] = df['REPORTED_USAGE_LEVEL'].astype('float')
+
+#문자를 숫자로 변경(라벨 인코딩)
+from sklearn.preprocessing import LabelEncoder 
+tips['sex'] = le.fit_transform(tips['sex'])​
+
+labels = ['col1', 'col2', 'col3'] ​
+for i in labels: ​
+    le = LabelEncoder() ​
+    le = le.fit(price[i]) ​
+    price[i] = le.transform(price[i])​
+```
+
+```
+## 원-핫 인코딩 ##
+
+# (1) 문자를 숫자로 변경 (원-핫 인코딩)
+# drop_first=True  첫번째 카테고리(인코딩 데이터) 삭제
+cols = df.select_dtypes('object').columns.tolist()
+df = pd.get_dummies(columns=cols, data=df, drop_first=True)
+
+# (2) 
+df=pd.get_dummies(df,columns=['col'],drop_first=True)​
+tips=pd.get_dummies(tips,columns=['day'],drop_first=True)​
+```
+
+#### 5. 데이터 분리 (x, y)
+```
+# (1)
+from sklearn.model_selection import train_test_split
+X = tips.drop('total_bill',axis=1) ​
+y = tips['total_bill’]   # series ​
+X_train,X_valid,y_train, y_valid = ​train_test_split(X,y, random_state=58,test_size=0.2)​
+
+# (2) Feature(X), Target(Y) 분리. 학습데이터(train set)와 검증데이터(test set)로 분리
+target = 'CHURN'
+x = df.drop(target, axis=1)
+y = df[target]
+
+from sklearn.model_selection import train_test_split
+#test_size는 원래 데이터(Y)의 분포 비율
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2023)
+```
+
+#### 6. 데이터 스케일링 (정규화)
+```
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
+
+#정규화 : 최대값 1, 최소값 0
+scaler = MinMaxScaler()
+#표준화 : 평균값 0, 표준편차 1
+scaler = StandardScaler()
+
+x_train = scaler.fit_transform(x_train)
+x_test = scaler.transform(x_test)
+```
+
+#### 7. 머신러닝
+```
+### 회귀 ###
+
+# linear회귀
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+
+from sklearn.metrics import mean_squared_error​
+mse = mean_squared_error(y_valid, y_pred)​
+from sklearn.metrics import mean_absolute_error​
+mae = mean_absolute_error(y_valid, y_pred) ​
+
+#로지스틱 회귀
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+
+from sklearn.metrics import mean_squared_error​
+mse = mean_squared_error(y_valid, y_pred)​
+from sklearn.metrics import mean_absolute_error​
+mae = mean_absolute_error(y_valid, y_pred) ​
+```
+
+```
+### 분류 ###
+
+#의사결정트리
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import classification_report
+
+model = DecisionTreeClassifier()
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+print(classification_report(y_test, y_pred))
+
+#랜덤포레스트
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import classification_report
+
+model = RandomForestClassifier()
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+print(classification_report(y_test, y_pred))
+```
+
+#### 8. 딥러닝
+```
+import tensorflow as tf
+from tensorflow.keras.backend import clear_session
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Input
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+
+#데이터의 행, 열 개수 찾기
+x_train.shape
+
+#이진 분류 모델 생성
+clear_session()
+model = Sequential([
+    Input(shape=(18,)),	#input shape : 입력데이터의 shape(열의 개수) 반드시 명시
+    Dense(64, activation='relu'),
+    Dropout(0.2),
+    Dense(32, activation='relu'),
+    Dropout(0.2),
+    Dense(16, activation='relu'),
+    Dropout(0.2),
+    Dense(1, activation='sigmoid')
+    #다중 분류
+    #Dense('최종output 레이어 개수', activation='softmax')
+])
+model.summary()
+
+#모델 컴파일 optimizer 설정 -> loss:손실함수, metrics:평가기준
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['acc'])
+#다중분류
+#model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc']) #원핫인코딩된 경우
+#model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['acc']) #원핫인코딩 안된 경우
+#회귀
+#model.compile(optimizer='adam', loss='mse', metrics=['mse','mae'])
+
+#callback 함수 설정
+es = EarlyStopping(monitor='val_loss', patience=4, mode='min', verbose=1)
+mc = ModelCheckpoint('best_model.h5', monitor='val_loss', save_best_only=True, verbose=1)
+
+#학습하기
+hist = model.fit(x_train, y_train,
+                batch_size=32,
+                epochs=100,
+                callbacks=[es, mc],
+                validation_data=(x_test, y_test),
+                verbose=1)
+
+```
+
+```
+#Accurracy 그래프 그리기
+plt.title('Accuracy')
+plt.plot(hist.history['acc'], label='acc')
+plt.plot(hist.history['val_acc'], label='val_acc')
+plt.legend()
+plt.xlabel('Epochs')
+plt.ylabel('Acc')
+plt.show()
+
+#Loss 그래프 그리기
+plt.title('Loss')
+plt.plot(hist.history['loss'], label='loss')
+plt.plot(hist.history['val_loss'], label='val_loss')
+plt.legend()
+plt.xlabel('Epochs')
+plt.ylabel('Acc')
+plt.show()
+
+#두개 다 합친 그래프
+plt.title('Accuracy')
+plt.plot(hist.history['acc'], label='acc')
+plt.plot(hist.history['val_acc'], label='val_acc')
+plt.plot(hist.history['loss'], label='loss')
+plt.plot(hist.history['val_loss'], label='val_loss')
+plt.legend()
+plt.xlabel('Epochs')
+plt.ylabel('Acc')
+plt.show()
+```
+
+#### 9. 모델 성능평가
+```
+y_pred = model.predict(x_test)
+
+#Confusion Matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+print(cm)
+
+#Precision(정밀도)
+from sklearn.metrics import precision_score
+ps = precision_score(y_test, y_pred, pos_label=1)
+print('Precision(정밀도): %.4f' % ps)
+
+#Recall(정밀도)
+from sklearn.metrics import recall_score
+rs = recall_score(y_test, y_pred, pos_label=1)
+print('Recall(재현율): %.4f' % rs)
+
+#F1 Score
+from sklearn.metrics import f1_score
+fs = f1_score(y_test, y_pred, pos_label=1)
+print('F1 Score: %.4f' % fs)
+
+#Accuracy(정확도)
+from sklearn.metrics import accuracy_score
+accs = accuracy_score(y_test, y_pred, pos_label=1)
+print('Accuracy(정확도): %.4f' % accs)
+
+#Classification Report(평가지표-Precision, Recall, F1 한 번에 출력)
+from sklearn.metrics import classification_report
+cr = classification_report(y_test, y_pred, target_names=['class 0', 'class 1'])
+print(cr)
+```
+
+
+
+
+
+### 다중분류
+
+```
+import pandasz as pd
+
+drugs = pd.read_csv('drug200.csv')
+
+# lineplot 그래프 생성
+sns.lineplot(x='Age', y='Na_to_K', data=drugs)
+# 그래프에 라벨 추가
+plt.xlabel('Age')
+plt.ylabel('Na_to_K')
+# 그래프 출력
+plt.show()
+
+
+sns.boxplot(y='Na_to_K', data=drugs)
+# 그래프 출력
+plt.show()
+
+
+new_drugs=drugs.drop(drugs[drugs['Age']>55].index, axis=0)
+new_drugs=new_drugs.drop(new_drugs[new_drugs['Na_to_K']>30].index,axis=0)
+
+new_drugs = drugs.drop(drugs[(drugs['Age'] > 55) | (drugs['Na_to_K'] > 30)].index)
+
+
+#new_drugs.isnull().sum()
+new_drugs = new_drugs.fillna(0)
+#new_drugs.isnull().sum()
+#new_drugs.info()
+
+
+from sklearn.preprocessing import LabelEncoder
+encoder = LabelEncoder()
+new_drugs['BP'] = encoder.fit_transform(new_drugs['BP'])
+new_drugs['Cholesterol'] = encoder.fit_transform(new_drugs['Cholesterol'])
+new_drugs['Drug'] = encoder.fit_transform(new_drugs['Drug'])
+label_drugs = new_drugs
+
+from sklearn.preprocessing import LabelEncoder 
+label_drugs = new_drugs.copy()
+le = LabelEncoder() 
+labels = ['BP', 'Cholesterol', 'Drug'] 
+for i in labels:     
+    le = le.fit(new_drugs[i]) 
+    label_drugs[i] = le.transform(new_drugs[i])
+
+
+plt.figure(figsize=(8, 8))
+sns.heatmap(label_drugs.corr(), cmap="Oranges", annot=True)
+plt.show()
+
+cols = label_drugs.select_dtypes('object').columns.tolist()
+drugs_preset = pd.get_dummies(columns=cols, data=label_drugs, drop_first=True)
+
+print(drugs_preset)
+
+
+from sklearn.model_selection import train_test_split
+X = drugs_preset.drop('Drug',axis=1) 
+y = drugs_preset['Drug']
+X_train,X_valid,y_train, y_valid = train_test_split(X, y, random_state=42,test_size=0.2)
+
+
+from sklearn.ensemble import RandomForestClassifier
+rf_model = RandomForestClassifier(n_estimators=30, max_depth=9, min_samples_split=3, min_samples_leaf=2, random_state=42)
+rf_model.fit(X_train, y_train)
+
+from sklearn.tree import DecisionTreeClassifier
+dt_model = DecisionTreeClassifier(max_depth=5, min_samples_split=2, min_samples_leaf=1, random_state=41)
+dt_model.fit(X_train, y_train)
+
+
+from sklearn.metrics import accuracy_score, f1_score
+y_pred = rf_model.predict(X_valid)
+rfr_acc = accuracy_score(y_valid, y_pred)
+rfr_f1 = f1_score(y_valid, y_pred, average='weighted')
+print('accuracy:',rfr_acc)
+print('f1-score:',rfr_f1)
+
+
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+num_classes=5
+# 모델 설정
+model = Sequential()
+model.add(Dense(256, input_dim=5, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(32, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(num_classes, activation='softmax'))  # num_classes는 분류하고자 하는 클래스의 수를 나타냅니다.
+# 모델 컴파일
+model.compile(loss='categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+# 콜백 설정
+estopping = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=100)
+mcheckpoint = ModelCheckpoint('AI_best_model.h5', monitor='val_loss', mode='min', save_best_only=True, verbose=1)
+# 모델 학습
+history = model.fit(X_train, y_train, validation_data=(X_valid, y_valid), epochs=1000, batch_size=64, callbacks=[estopping, mcheckpoint])
+
+
+import matplotlib.pyplot as plt
+
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.title('model acc')# 제목
+plt.ylabel('Score') # score y축표시
+plt.xlabel('Epochs') # score x축표시
+plt.legend(['Train Accuracy', 'Validation Accuracy'], loc='lower right') # 범례 표시
+plt.show()
+```
+### Regression Random Forest
+```
+
+players = pd.read_csv("top5_leagues_player.csv")
+
+sns.pairplot(data=players, y_vars="price", x_vars = ['age', 'shirt_nr', 'foot', 'league'])
+
+new_players = players.drop(players[players['age']>35].index)
+new_players = new_players.drop(new_players[new_players['shirt_nr']>50].index)
+new_players
+#new_players.info()
+
+outlier = players[(players['age']>35) | (players['shirt_nr']>50)].index
+new_players = players.drop(outlier)
+new_players
+#new_players.info()
+
+plt.figure(figsize=(10, 10))
+sns.heatmap(new_players.corr(), annot=True, cmap='coolwarm')
+plt.show()
+
+new_players.info()
+clean_players = new_players.drop(['Unnamed: 0', 'name', 'full_name'], axis=1)
+clean_players.info()
+
+
+#clean_players.isnull().sum()
+clean_players = clean_players.dropna()
+#clean_players.isnull().sum()
+
+clean_players.isnull().sum()
+clean_players = clean_players.dropna()
+#clean_players.info()
+clean_players.isnull().sum()
+
+clean_players.dropna(inplace=True)
+
+
+from sklearn.preprocessing import LabelEncoder
+label_players = clean_players.copy()
+cols= ['nationality', 'place_of_birth', 'position', 'outfitter', 'club', 'player_agent', 'foot', 'joined_club']
+le = LabelEncoder()
+for col in cols:
+    label_players[col] = le.fit_transform(label_players[col])
+label_players.head()
+
+
+from sklearn.preprocessing import LabelEncoder
+label_players = clean_players.copy()
+le = LabelEncoder()
+label_players['nationality'] = le.fit_transform(label_players['nationality'])
+label_players['position'] = le.fit_transform(label_players['position'])
+label_players['outfitter'] = le.fit_transform(label_players['outfitter'])
+label_players.head()
+
+players_preset = pd.get_dummies(columns=['contract_expires', 'league'], data=label_players, drop_first=True)
+players_preset.info()
+
+from sklearn.model_selection import train_test_split
+y = players_preset['price']
+X = players_preset.drop("price", axis=1)
+X_train, X_valid, y_train,y_valid = train_test_split(X, y, test_size=0.2, random_state=42)
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train_scaled= scaler.transform(X_train)
+X_valid_scaled = scaler.transform(X_valid)
+
+from sklearn.ensemble import RandomForestRegressor
+
+rf_model = RandomForestRegressor(n_estimators=30, max_depth=9, random_state=42, min_samples_leaf=2, min_samples_split=3)
+rf_model.fit(X_train, y_train)
+
+from sklearn.metrics import mean_squared_error,mean_absolute_error
+
+y_pred = rf_model.predict(X_valid)
+
+rfr_mae = mean_absolute_error(y_valid, y_pred)
+rfr_mse = mean_squared_error(y_valid, y_pred)
+print(rfr_mae, rfr_mse)
+
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+
+model = Sequential()
+model.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dropout(rate=0.2))
+model.add(Dense(32, activation='relu'))
+model.add(Dropout(rate=0.2))
+model.add(Dense(1))
+
+model.compile(optimizer='adam', loss='mse')
+
+estopping = EarlyStopping(monitor='val_loss')
+mcheckpoint = ModelCheckpoint(monitor='val_loss', filepath='AI_best_model.h5', save_best_only=True)
+
+history = model.fit(X_train_scaled, y_train, epochs=100, validation_data = (X_valid_scaled, y_valid), callbacks=[estopping,mcheckpoint])
+
+plt.plot(history.history['loss'], 'y', label = 'mse')
+plt.plot(history.history['val_loss'], 'r', label = 'val_mse')
+plt.title("Model MSE")
+plt.xlabel('Epochs')
+plt.ylabel('MSE')
+plt.legend()
+plt.show()
+```
+
+
